@@ -1,4 +1,4 @@
-# ADD LAST LINE AT .profile OR .bash_login etc...
+# ADD LAST LINE AT .bashrc
 # Avoid conflicted vim command
 stty start undef
 stty stop undef

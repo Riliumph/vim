@@ -1,0 +1,10 @@
+"noremap <C-v> <Esc>v
+inoremap <C-:> <ESC>
+noremap <C-s> <Esc>:w<CR>
+
+" split screen
+nnoremap hs :split
+nnoremap vs :vsplit
+nnoremap s> <C-w>>
+
+

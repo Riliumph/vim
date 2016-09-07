@@ -1,8 +1,9 @@
-source $VIMRUNTIME/mswin.vim        " must set [stty start / stop undef] in .bashrc
+" Microsoft Windows Shortcut key
+source $HOME/vimconf/mswin.vim        " must set [stty start / stop undef] in .bashrc
+nnoremap <BS> <S-X>
 
- " split screen
+" split screen
 nnoremap hs :split
 nnoremap vs :vsplit
 nnoremap s> <C-w>>
 
-noremap <M-a> <C-q>

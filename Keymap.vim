@@ -5,4 +5,4 @@ nnoremap hs :split
 nnoremap vs :vsplit
 nnoremap s> <C-w>>
 
-
+noremap <M-a> <C-q>

@@ -26,7 +26,6 @@ set wrap			" reflow view
 set showmatch
 set list
 set listchars=tab:»_,eol:↲,extends:»,precedes:«,nbsp:%	"trail:-
-source ~/vimconf/HighlightTrailingSpace.vimconf
 
 " Search Setting
 set hlsearch		" highlight match word

@@ -5,7 +5,7 @@ nnoremap <BS> <S-X>
 
 " Replace Command
 nnoremap <C-h> <ESC>:%s/
-vnoremap <C-h> "+y:%s/<C-R>+
+vnoremap <C-h> "+y:%s/<C-R>+/
 
 
 " split screen

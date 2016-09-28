@@ -1,5 +1,5 @@
 " Microsoft Windows Shortcut key
-source $HOME/vimconf/mswin.vim        " must set [stty start / stop undef] in .bashrc
+source $RUNTIME_FOR_VIM/mswin.vim        " must set [stty start / stop undef] in .bashrc
 nnoremap <BS> <S-X>
 
 " Find Command

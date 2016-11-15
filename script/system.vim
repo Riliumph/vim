@@ -8,6 +8,7 @@ set backspace=start,eol,indent      " use backspace to erase
 set virtualedit=block
 set paste                           " invalid autoindent for pasting
 set mouse=a                         " use mouse
+autocmd BufWritePre * :%s/\s\+$//ge " auto erase trailing space
 
 " Search Setting
 set hlsearch        " highlight match word

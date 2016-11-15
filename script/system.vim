@@ -9,6 +9,8 @@ set virtualedit=block
 set paste                           " invalid autoindent for pasting
 set mouse=a                         " use mouse
 autocmd BufWritePre * :%s/\s\+$//ge " auto erase trailing space
+set scrolloff=3                     " scroll offset
+
 
 " Search Setting
 set hlsearch        " highlight match word

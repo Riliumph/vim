@@ -7,3 +7,7 @@ set showmatch
 set list            " show invisible character
 set listchars=tab:»_,eol:↲,extends:»,precedes:«,nbsp:%	"trail:-
 
+" ignore color scheme highlight
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+

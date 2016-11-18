@@ -11,3 +11,7 @@ set listchars=tab:»_,eol:↲,extends:»,precedes:«,nbsp:%	"trail:-
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 
+
+" At last, set colorscheme
+" colorscheme elflord
+colorscheme molokai

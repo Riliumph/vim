@@ -4,7 +4,7 @@ nnoremap <BS> <S-X>
 
 " Find Command
 nnoremap <C-f> <ESC>/
-vnoremap <C-f> "+y/<C-R>+       " "+y -> go to N-mode & <C-R>+ -> paste
+vnoremap <C-f> "+y/<C-R>+
 
 " Replace Command
 nnoremap <C-h> <ESC>:%s/
@@ -15,3 +15,7 @@ nnoremap hs :split
 nnoremap vs :vsplt
 nnoremap s> <C-w>>
 
+
+" explain
+" "+y -> Go to Normal Mode
+" <C-R>+ -> paste

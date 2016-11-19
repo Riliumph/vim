@@ -10,7 +10,7 @@ set paste                           " invalid autoindent for pasting
 set mouse=a                         " use mouse
 autocmd BufWritePre * :%s/\s\+$//ge " auto erase trailing space
 set scrolloff=3                     " scroll offset
-
+set whichwrap=b,s,h,l,<,>,[,],~	    " nonstop cursor
 
 " Search Setting
 set hlsearch        " highlight match word
@@ -18,5 +18,4 @@ set incsearch       " search on time
 set ignorecase
 set smartcase
 set wrapscan        " cyclic scan
-
 

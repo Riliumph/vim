@@ -15,7 +15,8 @@ set whichwrap=b,s,h,l,<,>,[,],~	    " nonstop cursor
 " Search Setting
 set hlsearch        " highlight match word
 set incsearch       " search on time
-set ignorecase
+" set ignorecase
 set smartcase
 set wrapscan        " cyclic scan
 
+command! SyntaxInfo call syntax#GetSyntaxInfo()

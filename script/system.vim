@@ -18,4 +18,3 @@ set incsearch       " search on time
 set smartcase
 set wrapscan        " cyclic scan
 
-command! SyntaxInfo call syntax#GetSyntaxInfo()

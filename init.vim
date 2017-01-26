@@ -1,3 +1,4 @@
+source $VIM_ROOT/init_dein.vim
 source $VIM_ROOT/script/system.vim
 source $VIM_ROOT/script/ui.vim
 source $VIM_ROOT/script/keymap.vim

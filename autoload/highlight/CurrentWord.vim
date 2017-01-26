@@ -15,7 +15,7 @@ function! s:GetCurrentWord()
 	endif
 endfunction
 
-function! s:HighlightCurrentWord()
+function! highlight#CurrentWord#Exe()
 	let l:word = s:GetCurrentWord()
 	if !empty(l:word)
 		if exists("w:current_match")
@@ -25,7 +25,7 @@ function! s:HighlightCurrentWord()
 	endif
 endfunction
 
-augroup cwh
-	autocmd! cwh
-	autocmd CursorMoved,CursorMovedI * call s:HighlightCurrentWord()
-augroup END
+"augroup cwh
+"	autocmd! cwh
+"	autocmd CursorMoved,CursorMovedI * call s:HighlightCurrentWord()
+"augroup END

@@ -21,16 +21,12 @@ execute 'set runtimepath+=' . s:dein_repo_dir
 if dein#load_state(join([s:dein_dir,'./'],'/'))
   call dein#begin(join([s:dein_dir,'./'],'/'))
 
-  " Let dein manage dein
-  " Required:
-  call dein#add(s:dein_repo_dir)
+  let g:toml_dir  = expand('~/.vim/toml')
+  let s:toml      = join([g:toml_dir, 'dein.toml'], '/')
+  let s:lazy_toml = join([g:toml_dir, 'lazy.toml'], '/')
 
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
   " Required:
   call dein#end()

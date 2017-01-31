@@ -1,6 +1,13 @@
+" Set dein install directory
 let s:dein_dir = expand("$HOME/.config/deinvim")
 let s:dein_repo_dir = join([s:dein_dir, 'repos/github.com/Shougo/dein.vim'], '/')
 
+" auto install dein.vim
+if !isdirectory(s:dein_repo_dir)
+  echo 'Install dein.vim'
+  echo 'Please wait...'
+  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+endif
 
 "dein Scripts-----------------------------
 if &compatible

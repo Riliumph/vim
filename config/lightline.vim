@@ -1,3 +1,6 @@
+" Powerline Font
+set guifont=Ricty\ for\ Powerline:h18
+
 let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ 'mode_map': {'c': 'NORMAL'},

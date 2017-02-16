@@ -7,6 +7,7 @@ nnoremap hs split
 nnoremap vs vsplt
 nnoremap s> <C-w>>
 
+nnoremap <expr> gf gitdiff#search_file('gf')
 
 " explain
 " "+y -> Go to Normal Mode

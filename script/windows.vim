@@ -81,6 +81,8 @@ noremap <C-t> <ESC>:tabnew<CR>
 noremap nt gt
 noremap pt gT
 
+""" CTRL-[ : Move between [ and ]
+nnoremap <C-]> %
 
 """"" Below this is a remap of the overwritten keymap.
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do

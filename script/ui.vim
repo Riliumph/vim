@@ -4,7 +4,6 @@ set number
 set ruler
 set showcmd         " show command in statusbar
 set laststatus=2    " always show stausbar
-set guifont=Ricty\ for\ Powerline:h18
 
 " Editor View Setting
 set shiftwidth=4    " tab width at beginning of line

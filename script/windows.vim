@@ -31,23 +31,16 @@ vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
 
 """ CTRL-C / CTRL-Insert : Copy
+" Use [+] or [*] register for clipboard
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 """ CTRL-V / SHIFT-Insert : Paste
-map <C-V>      "+gP
-map <S-Insert> "+gP
-cmap <C-V>      <C-R>+
-cmap <S-Insert> <C-R>+
-imap <S-Insert> <C-V>
-vmap <S-Insert> <C-V>
-" Pasting blockwise and linewise selections is not possible in Insert and
-" Visual mode without the +virtualedit feature.  They are pasted as if they
-" were characterwise instead.
-" Uses the paste.vim autoload script.
-" Use CTRL-G u to have CTRL-Z only undo the paste.
-exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
-exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
+" Use [+] or [*] register for clipboard
+noremap <C-V>       "+gP
+noremap <S-Insert>  "+gP
+noremap! <C-V>      <C-R>+
+noremap! <S-Insert> <C-R>+
 
 """ CTRL-A : Select all
 noremap  <C-A> gggH<C-O>G
@@ -63,13 +56,15 @@ vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
 
 """ CTRL-F : Find character
+" Use register [f] to avoid conflict with clipboard
 nnoremap <C-f> <ESC>/
-vnoremap <C-f> "+y/<C-R>+
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+vnoremap <C-f> "fy/<C-R>f
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 """ CTRL-H : Replace character
+" Use register [f] to avoid conflict with clipboard
 nnoremap <C-h> <ESC>:%s/
-vnoremap <C-h> "+y:%s/<C-R>+/
+vnoremap <C-h> "fy:%s;<C-R>f;
 
 """ CTRL-Y : Redo (although not repeat); not in cmdline though
 noremap  <C-Y> <C-R>
@@ -81,8 +76,9 @@ noremap <C-t> <ESC>:tabnew<CR>
 noremap nt gt
 noremap pt gT
 
-""" CTRL-[ : Move between [ and ]
+""" CTRL-] : Move between [ and ]
 nnoremap <C-]> %
+inoremap <C-]> %
 
 """"" Below this is a remap of the overwritten keymap.
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do

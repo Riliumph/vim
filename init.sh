@@ -5,7 +5,7 @@ if [ ! -v VIM_ROOT ]; then
 fi
 
 if [ ! -v DEIN_ROOT ]; then
-  export DEIN_ROOT="$VIM_ROOT/dein"
+  export DEIN_ROOT="$VIM_ROOT/plug-dein"
 fi
 
 ### Avoid conflicted vim command

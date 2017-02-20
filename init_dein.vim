@@ -1,5 +1,5 @@
 " Set dein install directory
-let s:dein_dir = expand("$HOME/.config/deinvim")
+let s:dein_dir = expand("$DEIN_ROOT")
 let s:dein_repo_dir = join([s:dein_dir, 'repos/github.com/Shougo/dein.vim'], '/')
 
 " auto install dein.vim

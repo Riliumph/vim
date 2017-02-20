@@ -9,3 +9,4 @@ source $VIM_ROOT/script/color.vim
 " Subsequently, plug-in configuration
 source $VIM_ROOT/config/lightline.vim
 source $VIM_ROOT/config/nerdtree.vim
+source $VIM_ROOT/config/neocomplete.vim

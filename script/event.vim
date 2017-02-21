@@ -14,3 +14,10 @@ augroup HighlightCurrentWord
 	autocmd CursorMoved,CursorMovedI * call highlight#CurrentWord#Exe()
 	autocmd ColorScheme * highlight CurrentWord ctermbg=53   ctermfg=none cterm=none
 augroup END
+
+augroup TogglePasteMode
+	autocmd!
+	autocmd InsertEnter * set nopaste
+	autocmd InsertLeave * set paste
+augroup END
+

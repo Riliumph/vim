@@ -1,5 +1,5 @@
-# Read into INSERT MODE
+# Intellisense
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
-on_i = 1
+on_i = 1 # Read into INSERT MODE
 

@@ -1,3 +1,9 @@
+augroup HighlightOnlyFocus
+	autocmd! HighlightOnlyFocus
+	autocmd WinLeave * set nocursorline
+	autocmd WinEnter,BufRead * set cursorline
+augroup END
+
 augroup EraseTrailingSpace
 	autocmd!
 	autocmd BufWritePre * :%s/\s\+$//ge

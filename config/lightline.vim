@@ -1,5 +1,11 @@
 " Powerline Font
-set guifont=Ricty\ for\ Powerline:h18
+if has("gui_running") || has("gui")
+  set guifont=Ricty\ for\ Powerline\ 12
+  set guifontwide=Ricty\ for\ Powerline\ 12
+"else
+" set guifont=Ricty\ for\ Powerline:h18
+" set guifontwide=Ricty\ for\ Powerline:h18
+endif
 
 let g:lightline = {
         \ 'colorscheme': 'wombat',

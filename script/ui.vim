@@ -8,19 +8,14 @@ set laststatus=2    " always show stausbar
 " Editor View Setting
 set shiftwidth=4    " tab width at beginning of line
 set tabstop=4       " tab width except beginning of line
+set expandtab       " use <space> instead of <tab>
+set softtabstop=2   " expandtab's width
 set wrap            " reflow view
-set showmatch
 set list            " show invisible character
 set listchars=tab:»_,eol:↲,extends:»,precedes:«,nbsp:%	" trail:-
 
 " Cursor Setting
-set showmatch
-set matchtime=1
-
+set showmatch       " highlight the corresponding parenthesis
+set matchtime=1     " highlight delay time(second)
 set cursorline
-augroup HighlightOnlyFocus
-	autocmd! HighlightOnlyFocus
-	autocmd WinLeave * set nocursorline
-	autocmd WinEnter,BufRead * set cursorline
-augroup END
 

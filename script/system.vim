@@ -5,8 +5,7 @@ set noswapfile
 set wildmode=list:longest
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
-" It should not be used because the key binding of Ctrl +? In non-normal mode does not work
-" set paste                       " invalid autoindent for pasting
+set paste                         " invalid autoindent for pasting
 set mouse=a                       " use mouse
 set scrolloff=3                   " scroll offset
 set whichwrap=b,s,h,l,<,>,[,],~	  " nonstop cursor

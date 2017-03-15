@@ -11,4 +11,6 @@ repo = 'osyo-manga/vim-anzu'
 # Useful explore
 repo = 'scrooloose/nerdtree'
 
-
+[[plugins]]
+# Show class, function, etc...
+repo = 'majutsushi/tagbar'

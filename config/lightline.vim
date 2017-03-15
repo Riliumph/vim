@@ -8,40 +8,68 @@ else
 endif
 
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
+        \ 'colorscheme': 'landscape',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \   'left': [ [ 'vim_mode', 'paste' ],
+        \             [ 'filename' ],
+        \             [ ''] ],
+        \   'right':[ [ 'lineinfo' ],
+        \             [ 'fileformat', 'filetype','fileencoding'] ]
         \ },
         \ 'component_function': {
+        \   'vim_mode': 'LightlineVimMode',
+        \   'opt_mode': 'LightlineOptMode',
         \   'modified': 'LightlineModified',
         \   'readonly': 'LightlineReadonly',
         \   'fugitive': 'LightlineFugitive',
         \   'filename': 'LightlineFilename',
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
+        \   'fileencoding': 'LightlineFileencoding'
         \ },
-        \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+        \ 'separator':    { 'left': "\u2b80", 'right': "\u2b82" },
         \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
         \ }
 
-function! LightlineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+function! LightlineVimMode()
+  return 60 < winwidth(0) ? lightline#mode() : ''
 endfunction
 
-function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+function! LightlineOptMode()
+	if 60 < winwidth(0)
+		return ''
+	endif
+	if &paste
+		return 'PASTE'
+	else
+		return ''
+	endif
 endfunction
 
 function! LightlineFilename()
   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+       \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+       \  &ft == 'unite' ? unite#get_status_string() :
+       \  &ft == 'vimshell' ? vimshell#get_status_string() :
+       \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineModified()
+	if &ft =~ 'help\|vimfiler\|gundo'
+		return ''
+	elseif &modified
+		return '+'
+	elseif &modifiable
+		return ''
+	else
+		return '-'
+	endif
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
 endfunction
 
 function! LightlineFugitive()
@@ -53,17 +81,15 @@ function! LightlineFugitive()
 endfunction
 
 function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+  return 70 < winwidth(0) ? &fileformat : ''
 endfunction
 
 function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  return 70 < winwidth(0) ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
 function! LightlineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+  return 70 < winwidth(0) ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
-function! LightlineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
+

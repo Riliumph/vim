@@ -12,7 +12,7 @@ let g:lightline = {
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [ [ 'vim_mode', 'paste' ],
-        \             [ 'filename' ],
+        \             [ 'filename', 'current_tag' ],
         \             [ ''] ],
         \   'right':[ [ 'lineinfo' ],
         \             [ 'fileformat', 'filetype','fileencoding'] ]
@@ -26,7 +26,8 @@ let g:lightline = {
         \   'filename': 'LightlineFilename',
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding'
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'current_tag' : 'CurrentTag'
         \ },
         \ 'separator':    { 'left': "\u2b80", 'right': "\u2b82" },
         \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
@@ -78,6 +79,10 @@ function! LightlineFugitive()
   else
     return ''
   endif
+endfunction
+
+function! CurrentTag()
+  return tagbar#currenttag('%s', '')
 endfunction
 
 function! LightlineFileformat()

@@ -62,7 +62,7 @@ function! LightlineFilename()
 	endif
 
 	let l:format=''
-	" Add RO mark
+	" Add Read Only mark
 	if &readonly
 		let l:format=join([l:format, '⭤'], '')
 	endif
@@ -81,9 +81,9 @@ endfunction
 
 function! LightlineModified()
 	if !&modifiable
-		return '-'
+		return '[-]'
 	elseif &modified
-		return '+'
+		return '[+]'
 	else
 		return ''
 	endif
@@ -94,7 +94,7 @@ function! LightlineFugitive()
 endfunction
 
 function! CurrentTag()
-	if 60 < winwidth(0)
+	if winwidth(0) < 60
 		return ''
 	endif
 	return tagbar#currenttag('%s', '')

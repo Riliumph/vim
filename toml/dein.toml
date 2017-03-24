@@ -1,4 +1,16 @@
 [[plugins]]
+# Cool status line
 repo = 'itchyny/lightline.vim'
 
+[[plugins]]
+# Show search status
+# ex) word (now / max)
+repo = 'osyo-manga/vim-anzu'
 
+[[plugins]]
+# Useful explore
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+# Show class, function, etc...
+repo = 'majutsushi/tagbar'

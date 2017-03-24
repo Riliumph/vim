@@ -1,0 +1,194 @@
+[1mdiff --git a/config/lightline.vim b/config/lightline.vim[m
+[1mindex a05f8b4..e56d83a 100644[m
+[1m--- a/config/lightline.vim[m
+[1m+++ b/config/lightline.vim[m
+[36m@@ -1,100 +1,115 @@[m
+ " Powerline Font[m
+ if has("gui_running") || has("gui")[m
+[31m-  set guifont=Ricty\ for\ Powerline\ 12[m
+[31m-  set guifontwide=Ricty\ for\ Powerline\ 12[m
+[32m+[m	[32mset guifont=Ricty\ for\ Powerline\ 12[m
+[32m+[m	[32mset guifontwide=Ricty\ for\ Powerline\ 12[m
+ else[m
+[31m-  set guifont=Ricty\ for\ Powerline:h18[m
+[31m-  set guifontwide=Ricty\ for\ Powerline:h18[m
+[32m+[m	[32mset guifont=Ricty\ for\ Powerline:h18[m
+[32m+[m	[32mset guifontwide=Ricty\ for\ Powerline:h18[m
+ endif[m
+ [m
+ let g:lightline = {[m
+[31m-        \ 'colorscheme': 'landscape',[m
+[31m-        \ 'mode_map': {'c': 'NORMAL'},[m
+[31m-        \ 'active': {[m
+[31m-        \   'left': [ [ 'vim_mode', 'paste' ],[m
+[31m-        \             [ 'filename', 'current_tag' ],[m
+[31m-        \             [ ''] ],[m
+[31m-        \   'right':[ [ 'lineinfo' ],[m
+[31m-        \             [ 'fileformat', 'filetype','fileencoding'] ][m
+[31m-        \ },[m
+[31m-        \ 'component_function': {[m
+[31m-        \   'vim_mode': 'LightlineVimMode',[m
+[31m-        \   'opt_mode': 'LightlineOptMode',[m
+[31m-        \   'modified': 'LightlineModified',[m
+[31m-        \   'readonly': 'LightlineReadonly',[m
+[31m-        \   'fugitive': 'LightlineFugitive',[m
+[31m-        \   'filename': 'LightlineFilename',[m
+[31m-        \   'fileformat': 'LightlineFileformat',[m
+[31m-        \   'filetype': 'LightlineFiletype',[m
+[31m-        \   'fileencoding': 'LightlineFileencoding',[m
+[31m-        \   'current_tag' : 'CurrentTag'[m
+[31m-        \ },[m
+[31m-        \ 'separator':    { 'left': "\u2b80", 'right': "\u2b82" },[m
+[31m-        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },[m
+[31m-        \ }[m
+[32m+[m	[32m\ 'colorscheme': 'landscape',[m
+[32m+[m	[32m\ 'mode_map': {'c': 'NORMAL'},[m
+[32m+[m	[32m\ 'active': {[m
+[32m+[m	[32m\   'left': [['vim_mode', 'opt_mode'],[m
+[32m+[m	[32m\            ['filename', 'current_tag'],[m
+[32m+[m	[32m\            ['']],[m
+[32m+[m	[32m\   'right':[['lineinfo'],[m
+[32m+[m	[32m\            ['filetype','fileencoding','fileformat']][m
+[32m+[m	[32m\ },[m
+[32m+[m	[32m\ 'inactive': {[m
+[32m+[m	[32m\   'left': [['filename']],[m
+[32m+[m	[32m\   'right':[['']][m
+[32m+[m	[32m\ },[m
+[32m+[m	[32m\ 'component_function': {[m
+[32m+[m	[32m\   'vim_mode': 'LightlineVimMode',[m
+[32m+[m	[32m\   'opt_mode': 'LightlineOptMode',[m
+[32m+[m	[32m\   'modified': 'LightlineModified',[m
+[32m+[m	[32m\   'fugitive': 'LightlineFugitive',[m
+[32m+[m	[32m\   'filename': 'LightlineFilename',[m
+[32m+[m	[32m\   'fileformat': 'LightlineFileformat',[m
+[32m+[m	[32m\   'filetype': 'LightlineFiletype',[m
+[32m+[m	[32m\   'fileencoding': 'LightlineFileencoding',[m
+[32m+[m	[32m\   'current_tag' : 'CurrentTag'[m
+[32m+[m	[32m\ },[m
+[32m+[m	[32m\ 'separator':    { 'left': "\u2b80", 'right': "\u2b82" },[m
+[32m+[m	[32m\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },[m
+[32m+[m	[32m\ }[m
+ [m
+ function! LightlineVimMode()[m
+[31m-  return 60 < winwidth(0) ? lightline#mode() : ''[m
+[32m+[m	[32mif winwidth(0) < 30[m
+[32m+[m		[32mreturn ''[m
+[32m+[m	[32mendif[m
+[32m+[m	[32mreturn &modifiable ? lightline#mode() : '⭤'[m
+ endfunction[m
+ [m
+ function! LightlineOptMode()[m
+[31m-	if 60 < winwidth(0)[m
+[31m-		return ''[m
+[31m-	endif[m
+[31m-	if &paste[m
+[31m-		return 'PASTE'[m
+[31m-	else[m
+[32m+[m	[32mif winwidth(0) < 35[m
+ 		return ''[m
+ 	endif[m
+[32m+[m	[32mreturn &paste && &modifiable ? 'PASTE' : ''[m
+ endfunction[m
+ [m
+[32m+[m[32mlet s:filetype_dict={[m
+[32m+[m			[32m\'nerdtree': 'NERD Tree',[m
+[32m+[m			[32m\'tagbar'  : 'Tagbar',[m
+[32m+[m			[32m\}[m
+[32m+[m
+ function! LightlineFilename()[m
+[31m-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .[m
+[31m-       \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :[m
+[31m-       \  &ft == 'unite' ? unite#get_status_string() :[m
+[31m-       \  &ft == 'vimshell' ? vimshell#get_status_string() :[m
+[31m-       \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .[m
+[31m-       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')[m
+[32m+[m	[32m" Special Name[m
+[32m+[m	[32mif has_key(s:filetype_dict, &ft)[m
+[32m+[m		[32mreturn s:filetype_dict[&ft][m
+[32m+[m	[32mendif[m
+[32m+[m
+[32m+[m	[32mlet l:format=''[m
+[32m+[m	[32m" Add RO mark[m
+[32m+[m	[32mif &readonly[m
+[32m+[m		[32mlet l:format=join([l:format, '⭤'], '')[m
+[32m+[m	[32mendif[m
+[32m+[m	[32m" Add filename[m
+[32m+[m	[32mif expand('%:t') != ''[m
+[32m+[m		[32mlet l:format = join([l:format, expand('%:t')], '')[m
+[32m+[m	[32melse[m
+[32m+[m		[32mlet l:format = join([l:format, '[No Name]'], '')[m
+[32m+[m	[32mendif[m
+[32m+[m	[32m" Add MOD mark[m
+[32m+[m	[32mif LightlineModified() != ''[m
+[32m+[m		[32mlet l:format = join([l:format, LightlineModified()], '')[m
+[32m+[m	[32mendif[m
+[32m+[m	[32mreturn l:format[m
+ endfunction[m
+ [m
+ function! LightlineModified()[m
+[31m-	if &ft =~ 'help\|vimfiler\|gundo'[m
+[31m-		return ''[m
+[32m+[m	[32mif !&modifiable[m
+[32m+[m		[32mreturn '-'[m
+ 	elseif &modified[m
+ 		return '+'[m
+[31m-	elseif &modifiable[m
+[31m-		return ''[m
+ 	else[m
+[31m-		return '-'[m
+[32m+[m		[32mreturn ''[m
+ 	endif[m
+ endfunction[m
+ [m
+[31m-function! LightlineReadonly()[m
+[31m-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''[m
+[31m-endfunction[m
+[31m-[m
+ function! LightlineFugitive()[m
+[31m-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')[m
+[31m-    return fugitive#head()[m
+[31m-  else[m
+[31m-    return ''[m
+[31m-  endif[m
+[32m+[m	[32mreturn exists('*fugitive#head') ? fugitive#head() : ''[m
+ endfunction[m
+ [m
+ function! CurrentTag()[m
+[31m-  return tagbar#currenttag('%s', '')[m
+[32m+[m	[32mif 60 < winwidth(0)[m
+[32m+[m		[32mreturn ''[m
+[32m+[m	[32mendif[m
+[32m+[m	[32mreturn tagbar#currenttag('%s', '')[m
+ endfunction[m
+ [m
+ function! LightlineFileformat()[m
+[31m-  return 70 < winwidth(0) ? &fileformat : ''[m
+[32m+[m	[32mreturn 70 < winwidth(0) ? &fileformat : ''[m
+ endfunction[m
+ [m
+ function! LightlineFiletype()[m
+[31m-  return 70 < winwidth(0) ? (&filetype !=# '' ? &filetype : 'no ft') : ''[m
+[32m+[m	[32mreturn 70 < winwidth(0) ? (&filetype !=# '' ? &filetype : 'no ft') : ''[m
+ endfunction[m
+ [m
+ function! LightlineFileencoding()[m
+[31m-  return 70 < winwidth(0) ? (&fenc !=# '' ? &fenc : &enc) : ''[m
+[32m+[m	[32mreturn 70 < winwidth(0) ? (&fenc !=# '' ? &fenc : &enc) : ''[m
+ endfunction[m
+ [m
+ [m
+[1mdiff --git a/script/ui.vim b/script/ui.vim[m
+[1mindex ff34b10..ba64c4c 100644[m
+[1m--- a/script/ui.vim[m
+[1m+++ b/script/ui.vim[m
+[36m@@ -6,8 +6,8 @@[m [mset showcmd         " show command in statusbar[m
+ set laststatus=2    " always show stausbar[m
+ [m
+ " Editor View Setting[m
+[31m-set shiftwidth=4    " tab width at beginning of line[m
+[31m-set tabstop=4       " tab width except beginning of line[m
+[32m+[m[32mset shiftwidth=2    " tab width at beginning of line[m
+[32m+[m[32mset tabstop=2       " tab width except beginning of line[m
+ set expandtab       " use <space> instead of <tab>[m
+ set softtabstop=2   " expandtab's width[m
+ set wrap            " reflow view[m

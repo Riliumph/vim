@@ -4,24 +4,23 @@ set number
 set ruler
 set showcmd         " show command in statusbar
 set laststatus=2    " always show stausbar
-set guifont=Ricty\ for\ Powerline:h18
 
 " Editor View Setting
-set shiftwidth=4    " tab width at beginning of line
-set tabstop=4       " tab width except beginning of line
+set shiftwidth=2    " tab width at beginning of line
+set tabstop=2       " tab width except beginning of line
+set expandtab       " use <space> instead of <tab>
+set softtabstop=2   " expandtab's width
 set wrap            " reflow view
-set showmatch
 set list            " show invisible character
 set listchars=tab:»_,eol:↲,extends:»,precedes:«,nbsp:%	" trail:-
 
 " Cursor Setting
-set showmatch
-set matchtime=1
-
+set showmatch       " highlight the corresponding parenthesis
+set matchtime=1     " highlight delay time(second)
 set cursorline
-augroup HighlightOnlyFocus
-	autocmd! HighlightOnlyFocus
-	autocmd WinLeave * set nocursorline
-	autocmd WinEnter,BufRead * set cursorline
-augroup END
+if has("gui") || has("gui_running")
+	"set guicursor=n-v-o-c:ver5-Cursor,r-cr:hor5-Cursor-blinkwait1-blinkoff1000-blinkon1000,sm:block-Cursor-blinkwait1-blinkoff1000-blinkon1000
+	" blinkxx[ms]
+	set guicursor=n-v-o-c:ver1-Cursor,r-cr:hor1-Cursor,sm:block-Cursor,a:blinkwait1-blinkon600-blinkoff600
+endif
 

@@ -1,6 +1,9 @@
 " Set dein install directory
-let s:dein_dir = expand("$HOME/.config/deinvim")
-let s:dein_repo_dir = join([s:dein_dir, 'repos/github.com/Shougo/dein.vim'], '/')
+let g:dein_dir = $DEIN_ROOT " Don't use builtin expand function
+if strlen(g:dein_dir) == 0
+  let g:dein_dir=join([$VIM_ROOT, 'plug-dein'], '/')
+endif
+let s:dein_repo_dir = join([g:dein_dir, 'repos/github.com/Shougo/dein.vim'], '/')
 
 " auto install dein.vim
 if !isdirectory(s:dein_repo_dir)
@@ -18,8 +21,8 @@ endif
 execute 'set runtimepath+=' . s:dein_repo_dir
 
 " Required:
-if dein#load_state(join([s:dein_dir,'./'],'/'))
-  call dein#begin(join([s:dein_dir,'./'],'/'))
+if dein#load_state(join([g:dein_dir,'./'],'/'))
+  call dein#begin(join([g:dein_dir,'./'],'/'))
 
   let g:toml_dir  = expand('~/.vim/toml')
   let s:toml      = join([g:toml_dir, 'dein.toml'], '/')

@@ -11,6 +11,6 @@ source $VIM_ROOT/script/color.vim
 source $VIM_ROOT/config/anzu.vim
 source $VIM_ROOT/config/lightline.vim
 source $VIM_ROOT/config/neocomplete.vim
-source $VIM_ROOT/config/nerdtree.vim
 source $VIM_ROOT/config/tagbar.vim
+source $VIM_ROOT/config/nerdtree.vim " Finally load this plugin
 

@@ -78,7 +78,7 @@ noremap pt gT
 
 """ CTRL-] : Move between [ and ]
 nnoremap <C-]> %
-inoremap <C-]> %
+inoremap <C-]> <ESC>%i
 
 """"" Below this is a remap of the overwritten keymap.
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do

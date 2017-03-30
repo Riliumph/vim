@@ -6,8 +6,8 @@ set showcmd         " show command in statusbar
 set laststatus=2    " always show stausbar
 
 " Editor View Setting
-set shiftwidth=4    " tab width at beginning of line
-set tabstop=4       " tab width except beginning of line
+set shiftwidth=2    " tab width at beginning of line
+set tabstop=2       " tab width except beginning of line
 set expandtab       " use <space> instead of <tab>
 set softtabstop=2   " expandtab's width
 set wrap            " reflow view
@@ -18,4 +18,9 @@ set listchars=tab:»_,eol:↲,extends:»,precedes:«,nbsp:%	" trail:-
 set showmatch       " highlight the corresponding parenthesis
 set matchtime=1     " highlight delay time(second)
 set cursorline
+if has("gui") || has("gui_running")
+	"set guicursor=n-v-o-c:ver5-Cursor,r-cr:hor5-Cursor-blinkwait1-blinkoff1000-blinkon1000,sm:block-Cursor-blinkwait1-blinkoff1000-blinkon1000
+	" blinkxx[ms]
+	set guicursor=n-v-o-c:ver1-Cursor,r-cr:hor1-Cursor,sm:block-Cursor,a:blinkwait1-blinkon600-blinkoff600
+endif
 

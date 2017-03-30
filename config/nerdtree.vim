@@ -1,5 +1,6 @@
 " Auto execution NerdTree and focus file winows
-autocmd VimEnter * NERDTree | call feedkeys("\<C-w>l")
+autocmd VimEnter * NERDTree
+"| call feedkeys("\<C-w>l")
 
 " Close automatically when NerdTree is last window
 function! s:AutoClose()

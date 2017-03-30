@@ -1,10 +1,8 @@
 """ User system highlight
-autocmd ColorScheme * highlight CurrentWord  ctermfg=NONE ctermbg=53   cterm=NONE guifg=NONE    guibg=#40006a gui=NONE
-
 """ ignore color scheme highlight
 autocmd ColorScheme * highlight Normal       ctermfg=15   ctermbg=233  cterm=NONE guifg=#ffffff guibg=#1e1e1e gui=NONE
 autocmd ColorScheme * highlight LineNr       ctermfg=14   ctermbg=235  cterm=NONE guifg=#ffff00 guibg=NONE    gui=NONE
-autocmd ColorScheme * highlight Cursor       ctermfg=16   ctermbg=253  cterm=NONE guifg=#ffffff guibg=NONE    gui=NONE
+autocmd ColorScheme * highlight Cursor       ctermfg=16   ctermbg=253  cterm=NONE guifg=NONE    guibg=#ffffff gui=NONE
 autocmd ColorScheme * highlight CursorLine   ctermfg=NONE ctermbg=232  cterm=NONE guifg=NONE    guibg=#0a0a0a gui=NONE
 autocmd ColorScheme * highlight CursorLineNr ctermfg=11   ctermbg=232  cterm=bold guifg=#ffff00 guibg=#0a0a0a gui=bold
 autocmd ColorScheme * highlight Visual       ctermfg=NONE ctermbg=25   cterm=bold guifg=NONE    guibg=#006ad5 gui=bold

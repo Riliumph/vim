@@ -1,69 +1,115 @@
 " Powerline Font
 if has("gui_running") || has("gui")
-  set guifont=Ricty\ for\ Powerline\ 12
-  set guifontwide=Ricty\ for\ Powerline\ 12
+	set guifont=Ricty\ for\ Powerline\ 12
+	set guifontwide=Ricty\ for\ Powerline\ 12
 else
-  set guifont=Ricty\ for\ Powerline:h18
-  set guifontwide=Ricty\ for\ Powerline:h18
+	set guifont=Ricty\ for\ Powerline:h18
+	set guifontwide=Ricty\ for\ Powerline:h18
 endif
 
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ },
-        \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
-        \ }
+	\ 'colorscheme': 'landscape',
+	\ 'mode_map': {'c': 'NORMAL'},
+	\ 'active': {
+	\   'left': [['vim_mode', 'opt_mode'],
+	\            ['filename', 'current_tag'],
+	\            ['']],
+	\   'right':[['lineinfo'],
+	\            ['filetype','fileencoding','fileformat']]
+	\ },
+	\ 'inactive': {
+	\   'left': [['filename']],
+	\   'right':[['']]
+	\ },
+	\ 'component_function': {
+	\   'vim_mode': 'LightlineVimMode',
+	\   'opt_mode': 'LightlineOptMode',
+	\   'modified': 'LightlineModified',
+	\   'fugitive': 'LightlineFugitive',
+	\   'filename': 'LightlineFilename',
+	\   'fileformat': 'LightlineFileformat',
+	\   'filetype': 'LightlineFiletype',
+	\   'fileencoding': 'LightlineFileencoding',
+	\   'current_tag' : 'CurrentTag'
+	\ },
+	\ 'separator':    { 'left': "\u2b80", 'right': "\u2b82" },
+	\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+	\ }
 
-function! LightlineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+function! LightlineVimMode()
+	if winwidth(0) < 30
+		return ''
+	endif
+	return &modifiable ? lightline#mode() : '⭤'
 endfunction
 
-function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+function! LightlineOptMode()
+	if winwidth(0) < 35
+		return ''
+	endif
+	return &paste && &modifiable ? 'PASTE' : ''
 endfunction
+
+let s:filetype_dict={
+			\'nerdtree': 'NERD Tree',
+			\'tagbar'  : 'Tagbar',
+			\}
 
 function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+	" Special Name
+	if has_key(s:filetype_dict, &ft)
+		return s:filetype_dict[&ft]
+	endif
+
+	let l:format=''
+	" Add Read Only mark
+	if &readonly
+		let l:format=join([l:format, '⭤'], '')
+	endif
+	" Add filename
+	if expand('%:t') != ''
+		let l:format = join([l:format, expand('%:t')], '')
+	else
+		let l:format = join([l:format, '[No Name]'], '')
+	endif
+	" Add MOD mark
+	if LightlineModified() != ''
+		let l:format = join([l:format, LightlineModified()], '')
+	endif
+	return l:format
+endfunction
+
+function! LightlineModified()
+	if !&modifiable
+		return '[-]'
+	elseif &modified
+		return '[+]'
+	else
+		return ''
+	endif
 endfunction
 
 function! LightlineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return fugitive#head()
-  else
-    return ''
-  endif
+	return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! CurrentTag()
+	if winwidth(0) < 60
+		return ''
+	endif
+	return tagbar#currenttag('%s', '')
 endfunction
 
 function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+	return 70 < winwidth(0) ? &fileformat : ''
 endfunction
 
 function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+	return 70 < winwidth(0) ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
 function! LightlineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+	return 70 < winwidth(0) ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
-function! LightlineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
+

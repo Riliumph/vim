@@ -2,7 +2,6 @@
 set shortmess+=I                  " skip init screen
 set clipboard=unnamed,autoselect  " use clipboard for yunk etc...
 set noswapfile
-set wildmode=list:longest
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
 set paste                         " invalid autoindent for pasting
@@ -34,3 +33,12 @@ set softtabstop=2   " expandtab's width
 set autoindent      " maintain indentation of previous line at line feed
 set smartindent     " calculate indent amount when use smartindent
 set shiftwidth=2    " calculation unit of smartindent
+
+" Match Setting
+source $VIMRUNTIME/macros/matchit.vim  " expand [%]key command
+
+" Completion Setting
+set wildmenu      " use completion on COMMAND MODE
+set history=1000  " store history amount
+set wildmode=list:longest  " use filename completion
+

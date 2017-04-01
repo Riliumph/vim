@@ -8,7 +8,6 @@ set virtualedit=block
 set paste                         " invalid autoindent for pasting
 set mouse=a                       " use mouse
 set scrolloff=3                   " scroll offset
-set whichwrap=b,s,h,l,<,>,[,],~	  " nonstop cursor
 
 " Language Setting
 set encoding=utf-8    " when read a file

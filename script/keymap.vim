@@ -2,6 +2,14 @@
 " must set [stty start / stop undef] in .bashrc
 source $VIM_ROOT/script/windows.vim
 
+""" Arrow key
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
+inoremap <down> <C-O>gj
+inoremap <up>   <C-O>gk
+
 """ Screen
 nnoremap hs split
 nnoremap vs vsplt

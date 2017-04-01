@@ -5,8 +5,8 @@ source $VIM_ROOT/script/windows.vim
 """ Arrow key
 nnoremap j gj
 nnoremap k gk
-nnoremap <down> gj
-nnoremap <up> gk
+noremap <down> gj
+noremap <up> gk
 inoremap <down> <C-O>gj
 inoremap <up>   <C-O>gk
 
@@ -21,3 +21,6 @@ nnoremap <expr> gf gf#Exe()
 """ Go to definition under the cursor
 nnoremap vgd :vsp<CR> :exe(join(["tjump", expand('<cword>')], " "))<CR>
 nnoremap hgd :hsp<CR> :exe(join(["tjump", expand('<cword>')], " "))<CR>
+
+""" etc
+nnoremap <S-y> y$

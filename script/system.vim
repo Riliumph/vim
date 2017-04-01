@@ -11,8 +11,14 @@ set scrolloff=3                   " scroll offset
 set whichwrap=b,s,h,l,<,>,[,],~	  " nonstop cursor
 
 " Language Setting
-set encoding=utf-8
-scriptencoding utf-8
+set encoding=utf-8    " when read a file
+scriptencoding utf-8  " when use muti-byte char in Vim Script
+
+" File setting
+set fileencoding=utf-8  " use encoding to save file
+set fileencodings=utf-8,euc-jp,cp932 " use encoding to read file
+set fileformats=unix,dos,mac  " Auto discriminate CR-LF
+set ambiwidth=double    " Solve multi-byte characters collapse
 
 " Search Setting
 set hlsearch      " highlight match word

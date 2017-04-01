@@ -27,3 +27,11 @@ set incsearch     " search on time
 set smartcase
 set wrapscan      " cyclic scan
 
+" Indent Setting
+set shiftwidth=2    " tab width at beginning of line
+set tabstop=2       " tab width except beginning of line
+set expandtab       " use <space> instead of <tab>
+set softtabstop=2   " expandtab's width
+set autoindent      " maintain indentation of previous line at line feed
+set smartindent     " calculate indent amount when use smartindent
+set shiftwidth=2    " calculation unit of smartindent

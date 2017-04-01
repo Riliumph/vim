@@ -5,8 +5,21 @@ set noswapfile
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
 set paste                         " invalid autoindent for pasting
-set mouse=a                       " use mouse
 set scrolloff=3                   " scroll offset
+
+" Mouse Setting
+if has('mouse')
+	set mouse=a  " use mouse
+	if has('mouse_sgr')
+		set ttymouse=sgr
+	elseif 703 < v:version || v:version is 703
+		if has('patch632')
+			set ttymouse=sgr
+		endif
+	else
+		set ttymouse=xterm2
+	endif
+endif
 
 " Language Setting
 set encoding=utf-8    " when read a file

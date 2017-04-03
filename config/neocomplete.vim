@@ -2,6 +2,9 @@
 " Left & Right : Cancels completion and move cursor
 inoremap <expr><left> neocomplete#cancel_popup() . "\<left>"
 inoremap <expr><right> neocomplete#cancel_popup() . "\<right>"
+" Up & Down : Select candidates only while completion list is displayed
+inoremap <expr><up> pumvisible() ? "\<up>" :  "\<C-O>gk"
+inoremap <expr><down> pumvisible() ? "\<down>" : "\<C-O>gj"
 
 " TAB : Determines completion
 inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
@@ -31,11 +34,11 @@ let g:neocomplete#enable_at_startup = 1
 """ Trigger system
 " Minimum keyword length requierd to start completion
 let g:neocomplete#auto_completion_start_length = 1
-" Enable smart case 大文字が入力されるまで大文字小文字の区別を無視する
+" Enable smart case
 let g:neocomplete#enable_smart_case = 1
-" Enable camel case 大文字を区切りとしたワイルドカードのように振る舞う
+" Enable camel case
 let g:neocomplete#enable_camel_case_completion = 1
-" Enable snake case を有効化。下線を区切りとしたワイルドカードのように振る舞う
+" Enable snake case
 let g:neocomplete#enable_underbar_completion = 1
 
 """ View system

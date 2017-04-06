@@ -1,5 +1,10 @@
-# Intellisense
 [[plugins]]
+# Intellisense
 repo = 'Shougo/neocomplete.vim'
 on_i = 1 # Read into INSERT MODE
+
+[[plugins]]
+# Show search status
+# ex) word (now / max)
+repo = 'osyo-manga/vim-anzu'
 

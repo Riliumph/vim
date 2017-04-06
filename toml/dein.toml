@@ -9,3 +9,10 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 # Show class, function, etc...
 repo = 'majutsushi/tagbar'
+
+[[plugins]]
+# Asynchronous execution of commands
+repo  = 'Shougo/vimproc.vim'
+build = 'make'
+
+

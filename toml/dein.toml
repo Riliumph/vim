@@ -15,4 +15,7 @@ repo = 'majutsushi/tagbar'
 repo  = 'Shougo/vimproc.vim'
 build = 'make'
 
-
+[[plugins]]
+# Unified interface
+repo    = 'Shougo/unite.vim'
+depends = ['Shougo/vimproc']

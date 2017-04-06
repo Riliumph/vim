@@ -1,16 +1,25 @@
 [[plugins]]
 # Cool status line
 repo = 'itchyny/lightline.vim'
-
-[[plugins]]
-# Show search status
-# ex) word (now / max)
-repo = 'osyo-manga/vim-anzu'
+hook_source = "source $VIM_ROOT/config/lightline.vim"
 
 [[plugins]]
 # Useful explore
 repo = 'scrooloose/nerdtree'
+hook_source = "source $VIM_ROOT/config/nerdtree.vim"
 
 [[plugins]]
 # Show class, function, etc...
 repo = 'majutsushi/tagbar'
+hook_source = "source $VIM_ROOT/config/tagbar.vim"
+
+[[plugins]]
+# Asynchronous execution of commands
+repo  = 'Shougo/vimproc.vim'
+build = 'make' # auto build
+
+[[plugins]]
+# Unified interface
+repo    = 'Shougo/unite.vim'
+depends = ['Shougo/vimproc']
+hook_source = "source $VIM_ROOT/config/unite.vim"

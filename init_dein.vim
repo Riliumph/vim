@@ -1,5 +1,5 @@
 " Set dein install directory
-let g:dein_dir = $DEIN_ROOT " Don't use builtin expand function
+let g:dein_dir = $DEIN_ROOT " Don't use built-in expand() function
 if strlen(g:dein_dir) == 0
   let g:dein_dir=join([$VIM_ROOT, 'plug-dein'], '/')
 endif
@@ -21,8 +21,8 @@ endif
 execute 'set runtimepath+=' . s:dein_repo_dir
 
 " Required:
-if dein#load_state(join([g:dein_dir,'./'],'/'))
-  call dein#begin(join([g:dein_dir,'./'],'/'))
+if dein#load_state(join([g:dein_dir,'/'],''))
+  call dein#begin(join([g:dein_dir,'/'],''))
 
   let g:toml_dir  = expand('~/.vim/toml')
   let s:toml      = join([g:toml_dir, 'dein.toml'], '/')

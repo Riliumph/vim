@@ -2,6 +2,11 @@
 " must set [stty start / stop undef] in .bashrc
 source $VIM_ROOT/script/windows.vim
 
+""" CTRL-G: Grep
+nnoremap <C-g> <ESC>:vimgrep
+inoremap <C-g> "gy:vimgrep
+vnoremap <C-g> "gy:vimgrep <C-R>g %
+
 """ Arrow key
 nnoremap j gj
 nnoremap k gk

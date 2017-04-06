@@ -3,14 +3,19 @@
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-# Show search status
-# ex) word (now / max)
-repo = 'osyo-manga/vim-anzu'
-
-[[plugins]]
 # Useful explore
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 # Show class, function, etc...
 repo = 'majutsushi/tagbar'
+
+[[plugins]]
+# Asynchronous execution of commands
+repo  = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+# Unified interface
+repo    = 'Shougo/unite.vim'
+depends = ['Shougo/vimproc']

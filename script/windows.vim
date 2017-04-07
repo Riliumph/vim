@@ -1,16 +1,6 @@
 """ Set options and add mapping such that Vim behaves a lot like MS-Windows
 " Maintainer:	Riliumph
 
-" bail out if this isn't wanted (mrsvim.vim uses this).
-if exists("g:skip_loading_mswin") && g:skip_loading_mswin
-  finish
-endif
-
-""" Escape 'cpoptions'
-" only do this when compiled with expression evaluation
-let s:save_cpo = &cpoptions
-set cpo&vim
-
 """ set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
 behave mswin
 
@@ -78,7 +68,7 @@ noremap pt gT
 
 """ CTRL-] : Move between [ and ]
 nnoremap <C-]> %
-inoremap <C-]> %
+inoremap <C-]>  <C-O>%
 
 """"" Below this is a remap of the overwritten keymap.
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do
@@ -113,7 +103,3 @@ inoremap <C-F4> <C-O><C-W>c
 cnoremap <C-F4> <C-C><C-W>c
 onoremap <C-F4> <C-C><C-W>c
 
-""" Restore 'cpoptions'
-set cpo&
-let &cpoptions = s:save_cpo
-unlet s:save_cpo

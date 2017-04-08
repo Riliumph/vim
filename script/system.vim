@@ -4,7 +4,6 @@ set clipboard=unnamed,autoselect  " use clipboard for yunk etc...
 set noswapfile
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
-set paste                         " invalid autoindent for pasting
 set scrolloff=3                   " scroll offset
 
 " Mouse Setting

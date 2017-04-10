@@ -23,6 +23,7 @@ augroup END
 
 augroup TogglePasteMode
 	autocmd!
+	autocmd VimEnter * set paste
 	autocmd InsertEnter * set nopaste
 	autocmd InsertLeave * set paste
 augroup END

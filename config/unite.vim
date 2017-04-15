@@ -11,6 +11,11 @@ nnoremap <silent> ,cg yiw:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>0
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
 
+""" Unite command
+" Escape Unite buffer
+autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
 """ Unite Setting
 " Enter unite interface with INSERT MODE
 let g:unite_enable_start_insert = 1

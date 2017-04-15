@@ -49,7 +49,7 @@ inoremap <C-S> <C-O>:update<CR>
 " Use register [f] to avoid conflict with clipboard
 nnoremap <C-f> <ESC>/
 vnoremap <C-f> "fy/<C-R>f
-nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <silent> <ESC><f3> :set hlsearch!<CR>
 
 """ CTRL-H : Replace character
 " Use register [f] to avoid conflict with clipboard

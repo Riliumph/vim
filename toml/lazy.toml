@@ -2,17 +2,19 @@
 # Intellisense
 repo = 'Shougo/neocomplete.vim'
 if = 'has("lua")'
-on_i = 1 # Load when enter INSERT MODE
+# When enter INSERT MODE, Load this plug-in
+on_i = 1
+# Load this configuration file after loading this plug-in
 hook_source = "source $VIM_ROOT/config/neocomplete.vim"
-
-[[plugins]]
-# Show search status
-# ex) word (now / max)
-repo = 'osyo-manga/vim-anzu'
-on_cmd = ['/', '?'] # Load when find command
-hook_source = "source $VIM_ROOT/config/anzu.vim"
 
 [[plugins]]
 # for Unite file_mru
 repo      = 'Shougo/neomru.vim'
-on_source = ['unite.vim'] # Load when load unite.vim
+# When load unite.vim, load plug-in
+on_source = ['unite.vim']
+
+[[plugins]]
+# Asynchronous execution of commands
+repo  = 'Shougo/vimproc.vim'
+build = 'make' # auto build
+

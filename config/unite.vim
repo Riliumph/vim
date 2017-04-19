@@ -11,6 +11,11 @@ nnoremap <silent> ,cg yiw:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>0
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
 
+""" Unite command
+" Escape Unite buffer
+autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
 """ Unite Setting
 " Enter unite interface with INSERT MODE
 let g:unite_enable_start_insert = 1
@@ -22,6 +27,6 @@ let g:unite_enable_smart_case = 1
 " Use any grep command instead of GNU grep
 if executable('ag')
 	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts = '--nogroup --column --nocolor'
+	let g:unite_source_grep_default_opts = '--nocolor --nogroup --vimgrep'
 	let g:unite_source_frep_recursive_opt = ''
 endif

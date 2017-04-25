@@ -26,3 +26,6 @@ hook_add = "source $VIM_ROOT/config/unite.vim"
 repo = 'osyo-manga/vim-anzu'
 hook_add = "source $VIM_ROOT/config/anzu.vim"
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+

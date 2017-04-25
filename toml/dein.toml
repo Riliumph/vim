@@ -29,3 +29,8 @@ hook_add = "source $VIM_ROOT/config/anzu.vim"
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+# Show indent guides
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = "source $VIM_ROOT/config/indent-guides.vim"
+

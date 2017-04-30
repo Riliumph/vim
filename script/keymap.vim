@@ -10,8 +10,8 @@ vnoremap <C-g> "gy:vimgrep <C-R>g %
 """ Arrow key
 nnoremap j gj
 nnoremap k gk
-noremap <down> gj
-noremap <up> gk
+"noremap <down> gj
+"noremap <up> gk
 inoremap <down> <C-O>gj
 inoremap <up>   <C-O>gk
 

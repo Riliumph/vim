@@ -17,20 +17,20 @@ noremap <C-Z> u
 inoremap <C-Z> <C-O>u
 
 """ CTRL-X / SHIFT-Del : Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
+vnoremap <C-X> "*x
+vnoremap <S-Del> "*x
 
 """ CTRL-C / CTRL-Insert : Copy
-" Use [+] or [*] register for clipboard
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
+" Use [*] register for clipboard
+vnoremap <C-C> "*y
+vnoremap <C-Insert> "*y
 
 """ CTRL-V / SHIFT-Insert : Paste
-" Use [+] or [*] register for clipboard
-noremap <C-V>       "+gP
-noremap <S-Insert>  "+gP
-noremap! <C-V>      <C-R>+
-noremap! <S-Insert> <C-R>+
+" Use [*] register for clipboard
+noremap <C-V>       "*gP
+noremap <S-Insert>  "*gP
+noremap! <C-V>      <C-R>*
+noremap! <S-Insert> <C-R>*
 
 """ CTRL-A : Select all
 noremap  <C-A> gggH<C-O>G
@@ -77,7 +77,7 @@ noremap <C-Q>  <C-V>
 """ For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
 if !has("unix")
-  set guioptions-=a
+	set guioptions-=a
 endif
 
 """ Only GUI setting

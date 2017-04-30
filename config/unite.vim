@@ -7,9 +7,14 @@ vnoremap <C-g> "gy:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>g<CR>
 
 """ Command
 " Grep the word under the cursor
-nnoremap <silent> ,cg yiw:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>0<CR>
+nnoremap <silent> giw yiw:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>0<CR>
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
+
+""" Unite command
+" Escape Unite buffer
+autocmd FileType unite nnoremap <silent><buffer> <ESC><ESC> :q<CR>
+autocmd FileType unite inoremap <silent><buffer> <ESC><ESC> <ESC>:q<CR>
 
 """ Unite Setting
 " Enter unite interface with INSERT MODE

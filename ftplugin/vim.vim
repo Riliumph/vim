@@ -9,7 +9,7 @@ setlocal shiftwidth=2
 
 augroup EraseTrailingSpace
 	autocmd!
-	autocmd BufWritePre * :%s/\s\+$//ge
+	autocmd BufWritePre * call util#EraseTrailingSpace()
 augroup END
 
 " Auto tagbar

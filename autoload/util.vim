@@ -6,3 +6,7 @@ endfunction
 function! util#ShowFilename()
   echo expand("%")
 endfunction
+
+function! util#EraseTrailingSpace()
+  :%s/\s\+$//ge
+endfunction

@@ -2,6 +2,7 @@
 " only do this when compiled with expression evaluation
 let s:save_cpo = &cpoptions
 set cpo&vim
+execute 'set runtimepath+=' . $VIM_ROOT
 
 """ Basic configuration
 source $VIM_ROOT/script/system.vim

@@ -7,7 +7,7 @@ vnoremap <C-g> "gy:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>g<CR>
 
 """ Command
 " Grep the word under the cursor
-nnoremap <silent> giw yiw:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>0<CR>
+nnoremap <silent> giw yiw:<C-u>Unite grep:% -buffer-name=search-buffer<CR><C-R>0<CR>
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
 

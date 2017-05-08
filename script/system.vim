@@ -1,6 +1,6 @@
 " System Setting
 set shortmess+=I                  " skip init screen
-set clipboard=unnamed,autoselect  " use clipboard for yunk etc...
+set clipboard=unnamed             " use clipboard for yunk etc...
 set noswapfile
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block

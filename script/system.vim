@@ -1,10 +1,18 @@
 " System Setting
 set shortmess+=I                  " skip init screen
-set clipboard=unnamed             " use clipboard for yunk etc...
 set noswapfile
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
 set scrolloff=3                   " scroll offset
+
+" Clipboard Setting for yunk
+if has('unnamedplus')
+	" use +register as clipboard
+	set clipboard=unnamedplus
+else
+	" use *register as clipboard
+	set clipboard=unnamed
+endif
 
 " Mouse Setting
 if has('mouse')
@@ -52,4 +60,3 @@ source $VIMRUNTIME/macros/matchit.vim  " expand [%]key command
 set wildmenu      " use completion on COMMAND MODE
 set history=1000  " store history amount
 set wildmode=list:longest  " use filename completion
-

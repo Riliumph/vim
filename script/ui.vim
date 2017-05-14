@@ -18,6 +18,6 @@ set whichwrap=b,s,h,l,<,>,[,],~  " nonstop cursor
 if has("gui") || has("gui_running")
 	"set guicursor=n-v-o-c:ver5-Cursor,r-cr:hor5-Cursor-blinkwait1-blinkoff1000-blinkon1000,sm:block-Cursor-blinkwait1-blinkoff1000-blinkon1000
 	" blinkxx[ms]
-	set guicursor=n-v-o-c:ver1-Cursor,r-cr:hor1-Cursor,sm:block-Cursor,a:blinkwait1-blinkon600-blinkoff600
+	set guicursor=n-v-o-c:ver1-Cursor,r-cr:hor1-Cursor,sm:block-Cursor,a:blinkwait0-blinkon600-blinkoff600
 endif
 

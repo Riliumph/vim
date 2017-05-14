@@ -1,6 +1,3 @@
-setlocal foldmethod=marker
-setlocal foldmarker=#if,#endif
-
 " Indent Setting
 setlocal shiftwidth=2
 setlocal tabstop=2
@@ -15,5 +12,6 @@ augroup EraseTrailingSpace
 	autocmd BufWritePre * call util#EraseTrailingSpace()
 augroup END
 
+" Auto tagbar
 autocmd VimEnter * Tagbar
 

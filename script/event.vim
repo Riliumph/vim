@@ -4,11 +4,6 @@ augroup HighlightOnlyFocus
 	autocmd WinEnter,BufRead * set cursorline
 augroup END
 
-augroup EraseTrailingSpace
-	autocmd!
-	autocmd BufWritePre * :%s/\s\+$//ge
-augroup END
-
 augroup HighlightTrailingSpaces
 	autocmd!
 	autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/

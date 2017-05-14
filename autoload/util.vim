@@ -4,5 +4,17 @@ function! util#Refresh()
 endfunction
 
 function! util#ShowFilename()
-  echo expand("%")
+	echo expand("%")
+endfunction
+
+function! util#EraseTrailingSpace()
+	:%s/\s\+$//ge
+endfunction
+
+function! util#ClearRegister()
+	let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+	for r in regs
+		call setreg(r, [])
+	endfor
+	echo 'Clear register'
 endfunction

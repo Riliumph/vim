@@ -5,14 +5,16 @@ set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
 set scrolloff=3                   " scroll offset
 
-" Clipboard Setting for yunk
+" Clipboard Setting
+" CUI
 if has('unnamedplus')
-	" use +register as clipboard
-	set clipboard=unnamedplus
-else
-	" use *register as clipboard
-	set clipboard=unnamed
+	set clipboard+=unnamedplus      " Use +register by yank
 endif
+set clipboard+=unnamed            " Use *register by yank
+set clipboard-=autoselect         " Don't use as yank trigger
+" GUI
+set guioptions-=a
+set guioptions-=P
 
 " Mouse Setting
 if has('mouse')

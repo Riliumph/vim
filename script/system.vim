@@ -8,12 +8,13 @@ set scrolloff=3                   " scroll offset
 " Clipboard Setting
 " CUI
 if has('unnamedplus')
-	set clipboard+=unnamedplus      " Use +register by yank
+	" Don't use += operator
+	set clipboard^=unnamedplus      " Use +register by yank
 endif
-set clipboard+=unnamed            " Use *register by yank
+set clipboard^=unnamed            " Use *register by yank
 set clipboard-=autoselect         " Don't use as yank trigger
 " GUI
-set guioptions-=a
+set guioptions-=a                 " Don't use a select area as yank trigger
 set guioptions-=P
 
 " Mouse Setting

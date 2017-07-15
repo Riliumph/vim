@@ -1,13 +1,20 @@
 """ New Key map
+
+""" CTRL-B
+nnoremap <C-b> :<C-u>Unite buffer: -auto-preview -buffer-name=search-buffer<CR>
+
 """ CTRL-G
-nnoremap <C-g> :<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR>
-inoremap <C-g> <ESC>:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR>
+nnoremap <C-g>      :<C-u>Unite grep:  -auto-preview -buffer-name=search-buffer<CR>
+inoremap <C-g> <ESC>:<C-u>Unite grep:  -auto-preview -buffer-name=search-buffer<CR>
 " Use register [g] to avoid conflict other system
-vnoremap <C-g> "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
+vnoremap <C-g>      "gy:<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
+nnoremap <M-g>      "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
+vnoremap <C-a><C-g> "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
 
 """ Command
 " Grep the word under the cursor
 nnoremap <silent> giw yiw:<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R>0<CR>
+nnoremap <silent> GIW yiw:<C-u>Unite grep:. -auto-preview -buffer-name=Search-buffer<CR><C-R>0<CR>
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
 

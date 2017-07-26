@@ -2,29 +2,37 @@ function! s:IsMatchRegEx(target, regex)
 	return a:target =~# a:regex
 endfunction
 
-function! s:ParseFilename()
-	let l:offset = 6 " [--- a/] => 6 character
-	let l:visual_mode = 'v'
-	let l:cmd = '^' . l:offset . 'l'. l:visual_mode . '$'
-	return l:cmd
-endfunction
 
-function! s:SwitchCommand(command)
+"""
+" GfFile
+"
+" functor for kana/vim-gf-user
+" Parse the string under the cursor to the following elements
+" - file path
+" - line number
+" @return filepath & line number & cols number
+function! gf#GfFile()
 	" Get a string like filename under the cursor
-	let l:target_path = expand('<cfile>')
-
-	if !s:IsMatchRegEx(l:target_path, '^[ab]/')
-		return a:command
-	elseif filereadable(l:target_path) || isdirectory(l:target_path)
-		return a:command
+	let path = expand('<cfile>')
+	let line = 0
+	" Parse string under the cursor
+	if s:IsMatchRegEx(path, ':\d\+:\?$')
+		let line = matchstr(path, '\d\+:\?$')
+		let path = matchstr(path, '.*\ze:\d\+:\?$')
 	endif
-	let l:cmd = s:ParseFilename() . a:command
-	return l:cmd
+
+	" Parse git diff
+	if s:IsMatchRegEx(path, '^[ab]/')
+		let path = path[2:]  " a/ <- 2 character
+	endif
+
+	if !filereadable(path)
+		return 0
+	endif
+
+	return {
+				\ 'path': path,
+				\ 'line': line,
+				\ 'col': 0,
+				\}
 endfunction
-
-function! gf#Exe()
-	let l:cmd = s:SwitchCommand('gf')
-	return l:cmd
-endfunction
-
-

@@ -51,6 +51,7 @@ set wrapscan      " cyclic scan
 " Indent Setting
 set shiftwidth=4    " tab width at beginning of line
 set tabstop=4       " tab width except beginning of line
+set noexpandtab     " use tabcode instead of spaces
 set softtabstop=4   " expandtab's width
 set autoindent      " maintain indentation of previous line at line feed
 set smartindent     " calculate indent amount when use smartindent

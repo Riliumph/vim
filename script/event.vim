@@ -18,8 +18,8 @@ augroup END
 
 augroup TogglePasteMode
 	autocmd!
-	autocmd VimEnter * set paste
-	autocmd InsertEnter * set nopaste
-	autocmd InsertLeave * set paste
+	autocmd VimEnter * setlocal paste
+	autocmd InsertEnter * setlocal nopaste
+	autocmd InsertLeave * setlocal paste
 augroup END
 

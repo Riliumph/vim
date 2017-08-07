@@ -8,8 +8,8 @@ setlocal smartindent
 setlocal shiftwidth=2
 
 augroup EraseTrailingSpace
-	autocmd!
-	autocmd BufWritePre * call util#EraseTrailingSpace()
+autocmd!
+  autocmd BufWritePre * call util#EraseTrailingSpace()
 augroup END
 
 " Auto tagbar

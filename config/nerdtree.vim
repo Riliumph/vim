@@ -4,13 +4,13 @@ autocmd VimEnter * NERDTree
 
 " Close automatically when NerdTree is last window
 function! s:AutoClose()
-	if window#IsLast()
-		if exists("b:NERDTree")
-		   if b:NERDTree.isTabTree()
-				q
-			endif
-		endif
-	endif
+  if window#IsLast()
+    if exists("b:NERDTree")
+       if b:NERDTree.isTabTree()
+        q
+      endif
+    endif
+  endif
 endfunction
 autocmd bufenter * call s:AutoClose()
 

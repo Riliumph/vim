@@ -8,8 +8,8 @@ set scrolloff=3                   " scroll offset
 " Clipboard Setting
 " CUI
 if has('unnamedplus')
-	" Don't use += operator
-	set clipboard^=unnamedplus      " Use +register by yank
+  " Don't use += operator
+  set clipboard^=unnamedplus      " Use +register by yank
 endif
 set clipboard^=unnamed            " Use *register by yank
 set clipboard-=autoselect         " Don't use as yank trigger
@@ -19,16 +19,16 @@ set guioptions-=P
 
 " Mouse Setting
 if has('mouse')
-	set mouse=a  " use mouse
-	if has('mouse_sgr')
-		set ttymouse=sgr
-	elseif 703 < v:version || v:version is 703
-		if has('patch632')
-			set ttymouse=sgr
-		endif
-	else
-		set ttymouse=xterm2
-	endif
+  set mouse=a  " use mouse
+  if has('mouse_sgr')
+    set ttymouse=sgr
+  elseif 703 < v:version || v:version is 703
+    if has('patch632')
+      set ttymouse=sgr
+    endif
+  else
+    set ttymouse=xterm2
+  endif
 endif
 
 " Language Setting

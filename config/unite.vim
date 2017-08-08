@@ -33,7 +33,7 @@ let g:unite_enable_smart_case = 1
 
 " Use any grep command instead of GNU grep
 if executable('ag')
-	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts = '--nocolor --nogroup --vimgrep'
-	let g:unite_source_frep_recursive_opt = ''
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup --vimgrep'
+  let g:unite_source_frep_recursive_opt = ''
 endif

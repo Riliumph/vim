@@ -15,13 +15,13 @@ inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
 
 " Ctrl+Space ：Start completion like Visual Studio
 if !has('gui_running')
-	inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : neocomplete#start_manual_complete()
-	augroup ctrl_space_in_neocomplete
-		autocmd!
-		" Don't use noremap because settings after <C-Space> will not be reflected
-		autocmd VimEnter * map <Nul> <C-Space>
-		autocmd VimEnter * map! <Nul> <C-Space>
-	augroup END
+  inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : neocomplete#start_manual_complete()
+  augroup ctrl_space_in_neocomplete
+    autocmd!
+    " Don't use noremap because settings after <C-Space> will not be reflected
+    autocmd VimEnter * map <Nul> <C-Space>
+    autocmd VimEnter * map! <Nul> <C-Space>
+  augroup END
 endif
 
 """"" Neo Complete setting
@@ -60,15 +60,15 @@ let g:neocomplete#enable_auto_close_preview = 0
 autocmd InsertLeave * silent! pclose!
 
 if !exists('g:neocomplete#delimiter_patterns')
-	let g:neocomplete#delimiter_patterns= {}
+  let g:neocomplete#delimiter_patterns= {}
 endif
 
 if !exists('g:neocomplete#force_omni_input_patterns')
-	let g:neocomplete#force_omni_input_patterns = {}
+  let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 if !exists('g:neocomplete#same_filetypes')
-	let g:neocomplete#same_filetypes = {}
+  let g:neocomplete#same_filetypes = {}
 endif
 

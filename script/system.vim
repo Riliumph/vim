@@ -1,10 +1,21 @@
 " System Setting
 set shortmess+=I                  " skip init screen
-set clipboard=unnamed,autoselect  " use clipboard for yunk etc...
 set noswapfile
 set backspace=start,eol,indent    " use backspace to erase
 set virtualedit=block
 set scrolloff=3                   " scroll offset
+
+" Clipboard Setting
+" CUI
+if has('unnamedplus')
+	" Don't use += operator
+	set clipboard^=unnamedplus      " Use +register by yank
+endif
+set clipboard^=unnamed            " Use *register by yank
+set clipboard-=autoselect         " Don't use as yank trigger
+" GUI
+set guioptions-=a                 " Don't use a select area as yank trigger
+set guioptions-=P
 
 " Mouse Setting
 if has('mouse')
@@ -40,7 +51,7 @@ set wrapscan      " cyclic scan
 " Indent Setting
 set shiftwidth=4    " tab width at beginning of line
 set tabstop=4       " tab width except beginning of line
-set expandtab       " use <space> instead of <tab>
+set noexpandtab     " use tabcode instead of spaces
 set softtabstop=4   " expandtab's width
 set autoindent      " maintain indentation of previous line at line feed
 set smartindent     " calculate indent amount when use smartindent
@@ -53,4 +64,3 @@ source $VIMRUNTIME/macros/matchit.vim  " expand [%]key command
 set wildmenu      " use completion on COMMAND MODE
 set history=1000  " store history amount
 set wildmode=list:longest  " use filename completion
-

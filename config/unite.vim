@@ -13,8 +13,8 @@ vnoremap <C-a><C-g> "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buff
 
 """ Command
 " Grep the word under the cursor
-nnoremap <silent> giw yiw:<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R>0<CR>
-nnoremap <silent> GIW yiw:<C-u>Unite grep:. -auto-preview -buffer-name=Search-buffer<CR><C-R>0<CR>
+nnoremap <silent> giw :<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> GIW :<C-u>Unite grep:. -auto-preview -buffer-name=Search-buffer<CR><C-R><C-W><CR>
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
 

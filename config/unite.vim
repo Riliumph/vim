@@ -8,7 +8,7 @@ nnoremap <C-g>      :<C-u>Unite grep:  -auto-preview -buffer-name=search-buffer<
 inoremap <C-g> <ESC>:<C-u>Unite grep:  -auto-preview -buffer-name=search-buffer<CR>
 " Use register [g] to avoid conflict other system
 vnoremap <C-g>      "gy:<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
-nnoremap <M-g>      "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
+vnoremap <M-g>      "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
 vnoremap <C-a><C-g> "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
 
 """ Command

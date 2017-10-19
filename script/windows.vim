@@ -74,12 +74,6 @@ inoremap <C-]>  <C-O>%
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do
 noremap <C-Q>  <C-V>
 
-""" For CTRL-V to work autoselect must be off.
-" On Unix we have two selections, autoselect can be used.
-if !has("unix")
-  set guioptions-=a
-endif
-
 """ Only GUI setting
 if has("gui")
   """ Alt-Space : System menu

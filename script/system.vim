@@ -6,6 +6,8 @@ set virtualedit=block
 set scrolloff=3                   " scroll offset
 
 " Clipboard Setting
+" Prohibit because register conflicts with Copy and Yank
+if 0
 " CUI
 if has('unnamedplus')
   " Don't use += operator
@@ -16,6 +18,7 @@ set clipboard-=autoselect         " Don't use as yank trigger
 " GUI
 set guioptions-=a                 " Don't use a select area as yank trigger
 set guioptions-=P
+endif
 
 " Mouse Setting
 if has('mouse')

@@ -1,7 +1,7 @@
 function window#GetQty()
-	return winnr("$")
+  return winnr("$")
 endfunction
 
 function window#IsLast()
-	return window#GetQty() == 1
+  return window#GetQty() == 1
 endfunction

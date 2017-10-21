@@ -24,5 +24,11 @@ nnoremap s> <C-w>>
 nnoremap vgd :vsp<CR> :exe(join(["tjump", expand('<cword>')], " "))<CR>
 nnoremap hgd :hsp<CR> :exe(join(["tjump", expand('<cword>')], " "))<CR>
 
+""" Go to file under the cursor
+nnoremap vgf :vertical botright wincmd f<CR>
+nnoremap hgf :wincmd f<CR>
+
 """ etc
 nnoremap <S-y> y$
+nnoremap + <C-a>
+nnoremap - <C-x>

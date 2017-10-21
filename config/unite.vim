@@ -8,13 +8,13 @@ nnoremap <C-g>      :<C-u>Unite grep:  -auto-preview -buffer-name=search-buffer<
 inoremap <C-g> <ESC>:<C-u>Unite grep:  -auto-preview -buffer-name=search-buffer<CR>
 " Use register [g] to avoid conflict other system
 vnoremap <C-g>      "gy:<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
-nnoremap <M-g>      "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
+vnoremap <M-g>      "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
 vnoremap <C-a><C-g> "gy:<C-u>Unite grep:. -auto-preview -buffer-name=search-buffer<CR><C-R>g<CR>
 
 """ Command
 " Grep the word under the cursor
-nnoremap <silent> giw yiw:<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R>0<CR>
-nnoremap <silent> GIW yiw:<C-u>Unite grep:. -auto-preview -buffer-name=Search-buffer<CR><C-R>0<CR>
+nnoremap <silent> giw :<C-u>Unite grep:% -auto-preview -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> GIW :<C-u>Unite grep:. -auto-preview -buffer-name=Search-buffer<CR><C-R><C-W><CR>
 " Regrep back there
 nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
 
@@ -33,7 +33,7 @@ let g:unite_enable_smart_case = 1
 
 " Use any grep command instead of GNU grep
 if executable('ag')
-	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts = '--nocolor --nogroup --vimgrep'
-	let g:unite_source_frep_recursive_opt = ''
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup --vimgrep'
+  let g:unite_source_frep_recursive_opt = ''
 endif

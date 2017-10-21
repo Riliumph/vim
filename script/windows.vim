@@ -1,5 +1,5 @@
 """ Set options and add mapping such that Vim behaves a lot like MS-Windows
-" Maintainer:	Riliumph
+" Maintainer:  Riliumph
 
 """ set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
 behave mswin
@@ -74,21 +74,15 @@ inoremap <C-]>  <C-O>%
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do
 noremap <C-Q>  <C-V>
 
-""" For CTRL-V to work autoselect must be off.
-" On Unix we have two selections, autoselect can be used.
-if !has("unix")
-	set guioptions-=a
-endif
-
 """ Only GUI setting
 if has("gui")
-	""" Alt-Space : System menu
-	noremap <M-Space> :simalt ~<CR>
-	inoremap <M-Space> <C-O>:simalt ~<CR>
-	cnoremap <M-Space> <C-C>:simalt ~<CR>
-	""" Ctrl-Tab : Move tab
-	noremap <C-Tab> gt
-	noremap <C-S-Tab> gT
+  """ Alt-Space : System menu
+  noremap <M-Space> :simalt ~<CR>
+  inoremap <M-Space> <C-O>:simalt ~<CR>
+  cnoremap <M-Space> <C-C>:simalt ~<CR>
+  """ Ctrl-Tab : Move tab
+  noremap <C-Tab> gt
+  noremap <C-S-Tab> gT
 endif
 
 """ CTRL-Tab : Next window

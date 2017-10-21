@@ -1,3 +1,7 @@
+if v:version < 703 || v:version is 703
+  finish
+endif
+
 " Set dein install directory
 let g:dein_dir = $DEIN_ROOT " Don't use built-in expand() function
 if strlen(g:dein_dir) == 0

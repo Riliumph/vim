@@ -15,12 +15,6 @@ repo = 'majutsushi/tagbar'
 hook_add = "source $VIM_ROOT/config/tagbar.vim"
 
 [[plugins]]
-# Unified interface
-repo = 'Shougo/unite.vim'
-depends = ['Shougo/vimproc']
-hook_add = "source $VIM_ROOT/config/unite.vim"
-
-[[plugins]]
 # Show search status
 # ex) word (now / max)
 repo = 'osyo-manga/vim-anzu'

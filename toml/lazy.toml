@@ -17,4 +17,11 @@ on_source = ['unite.vim']
 # Asynchronous execution of commands
 repo  = 'Shougo/vimproc.vim'
 build = 'make' # auto build
+on_source = ['unite.vim']
+
+[[plugins]]
+# Unified interface
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_source= "source $VIM_ROOT/config/unite.vim"
 

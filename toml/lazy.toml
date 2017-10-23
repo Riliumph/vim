@@ -2,9 +2,7 @@
 # Intellisense
 repo = 'Shougo/neocomplete.vim'
 if = 'has("lua")'
-# When enter INSERT MODE, Load this plug-in
-on_i = 1
-# Load this configuration file after loading this plug-in
+on_event = "InsertEnter"
 hook_source = "source $VIM_ROOT/config/neocomplete.vim"
 
 [[plugins]]

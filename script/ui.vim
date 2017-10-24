@@ -6,7 +6,10 @@ set showcmd         " show command in statusbar
 set laststatus=2    " always show stausbar
 if has("gui") || has("gui_running")
   set guioptions-=T " non-dispkay tool-bar
+  set guioptions-=r " Basically hide the right scroll bar
+  set guioptions-=l " Basically hide the left scroll bar
 endif
+
 " Editor View Setting
 set wrap            " reflow view
 set list            " show invisible character
@@ -21,7 +24,6 @@ if has("gui") || has("gui_running")
   set guicursor=n-v-o-c:ver1-Cursor " Cursor width is a character of 1%
   set guicursor+=r-cr:hor1-Cursor   " Cursor height is a character of 1%
   set guicursor+=sm:block-Cursor
-  " blinkxx[ms]
-  set guicursor+=a:blinkwait600-blinkon600-blinkoff500
+  set guicursor+=a:blinkwait600-blinkon600-blinkoff500 " blinkxx[ms]
 endif
 

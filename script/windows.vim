@@ -70,6 +70,13 @@ noremap pt gT
 nnoremap <C-]> %
 inoremap <C-]>  <C-O>%
 
+""" ALT-Arrow : Move line
+" Use register [t], means temporary
+nnoremap <M-Up> "tdd<Up>"tP
+nnoremap <M-Down> "tdd"tp
+vnoremap <M-Up> "tx<Up>"tP`[V`]
+vnoremap <M-Down> "tx"tp`[V`]
+
 """"" Below this is a remap of the overwritten keymap.
 """ CTRL-Q : Go Visual Mode to do what CTRL-V used to do
 noremap <C-Q>  <C-V>

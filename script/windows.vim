@@ -1,15 +1,15 @@
-""" Set options and add mapping such that Vim behaves a lot like MS-Windows
+""" Set options and add mapping such that Vim behaves a lot like MS-Windows Visual Studio
 " Maintainer:  Riliumph
 
-""" set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
+""" Set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
 behave mswin
 
-""" backspace
-" backspace and cursor keys wrap to previous/next line
+""" Backspace
+" Backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
-" backspace in Visual mode deletes selection
+" Backspace in Visual mode deletes selection
 vnoremap <BS> "_d
-" backspace in Normal & Visual mode deletes a char before cursor
+" Backspace in Normal & Visual mode deletes a char before cursor
 nnoremap <BS> "_X
 
 """ CTRL-Z : Undo; not in cmdline though

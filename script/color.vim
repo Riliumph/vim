@@ -1,5 +1,5 @@
 """ User system highlight
-""" ignore color scheme highlight
+""" Ignore color scheme highlight
 autocmd ColorScheme * hi Normal       ctermfg=15   ctermbg=234  cterm=NONE guifg=#ffffff guibg=#1e1e1e gui=NONE
 autocmd ColorScheme * hi LineNr       ctermfg=14   ctermbg=235  cterm=NONE guifg=#ffff00 guibg=NONE    gui=NONE
 autocmd ColorScheme * hi Cursor       ctermfg=16   ctermbg=253  cterm=NONE guifg=NONE    guibg=#ffffff gui=NONE

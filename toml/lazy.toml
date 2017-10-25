@@ -21,5 +21,6 @@ on_source = ['unite.vim']
 # Unified interface
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
+on_event = 'VimEnter'
 hook_source= "source $VIM_ROOT/config/unite.vim"
 

@@ -30,5 +30,6 @@ nnoremap hgf :wincmd f<CR>
 
 """ etc
 nnoremap <S-y> y$
+nnoremap x "_x
 nnoremap + <C-a>
 nnoremap - <C-x>

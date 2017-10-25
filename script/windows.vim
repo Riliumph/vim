@@ -8,9 +8,9 @@ behave mswin
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 " backspace in Visual mode deletes selection
-vnoremap <BS> d
+vnoremap <BS> "_d
 " backspace in Normal & Visual mode deletes a char before cursor
-nnoremap <BS> <S-X>
+nnoremap <BS> "_X
 
 """ CTRL-Z : Undo; not in cmdline though
 noremap <C-Z> u

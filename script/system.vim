@@ -66,4 +66,4 @@ source $VIMRUNTIME/macros/matchit.vim  " Expand [%]key command
 " Completion Setting
 set wildmenu            " Use completion on COMMAND MODE
 set history=1000        " Store history amount
-set wildmode=list:longest  " Use filename completion
+set wildmode=full:longest  " Use filename completion

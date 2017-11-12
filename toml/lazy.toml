@@ -8,7 +8,6 @@ hook_source = "source $VIM_ROOT/config/neocomplete.vim"
 [[plugins]]
 # for Unite file_mru
 repo      = 'Shougo/neomru.vim'
-# When load unite.vim, load plug-in
 on_source = ['unite.vim']
 
 [[plugins]]
@@ -23,4 +22,10 @@ repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 on_event = 'VimEnter'
 hook_source= "source $VIM_ROOT/config/unite.vim"
+
+[[plugins]]
+# Show class, function, etc...
+repo = 'majutsushi/tagbar'
+on_source = ['lightline.vim']
+hook_source = "source $VIM_ROOT/config/tagbar.vim"
 

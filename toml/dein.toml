@@ -1,18 +1,13 @@
 [[plugins]]
 # Cool status line
 repo = 'itchyny/lightline.vim'
-# When add plug-in, load a configuration file
+depends = 'tagbar'
 hook_add = "source $VIM_ROOT/config/lightline.vim"
 
 [[plugins]]
 # Useful explore
 repo = 'scrooloose/nerdtree'
 hook_add = "source $VIM_ROOT/config/nerdtree.vim"
-
-[[plugins]]
-# Show class, function, etc...
-repo = 'majutsushi/tagbar'
-hook_add = "source $VIM_ROOT/config/tagbar.vim"
 
 [[plugins]]
 # Show search status

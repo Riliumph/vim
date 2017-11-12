@@ -1,3 +1,8 @@
+augroup ReloadEvent
+  autocmd!
+  autocmd WinEnter * checktime
+augroup END
+
 augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/

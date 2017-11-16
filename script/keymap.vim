@@ -1,3 +1,6 @@
+" Use alt key
+set winaltkeys=no
+
 """ Microsoft Visual Studio for Windows Shortcut key
 " must set [stty start / stop undef] in .bashrc
 source $VIM_ROOT/script/windows.vim

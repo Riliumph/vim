@@ -53,7 +53,7 @@ let g:neocomplete#max_list = 10
 let g:neocomplete#data_directory = join([g:dein_dir,"cache","neocomplete"],"/")
 " Minimum keyword length required cache
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#max_keyword_width = 10000
+let g:neocomplete#max_keyword_width = 50
 
 " Don't close preview window
 let g:neocomplete#enable_auto_close_preview = 0

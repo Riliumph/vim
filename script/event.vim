@@ -1,13 +1,18 @@
+augroup ReloadEvent
+  autocmd!
+  autocmd WinEnter * checktime
+augroup END
+
 augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
-  autocmd ColorScheme * highlight TrailingSpaces guibg=Red ctermbg=Red
+  autocmd ColorScheme * hi TrailingSpaces guibg=Red ctermbg=Red
 augroup END
 
 augroup HighlightCurrentWord
   autocmd!
   autocmd CursorMoved,CursorMovedI * call highlight#CurrentWord#Exe()
-  autocmd ColorScheme * highlight CurrentWord ctermfg=NONE ctermbg=53   cterm=NONE guifg=NONE    guibg=#40006a gui=NONE
+  autocmd ColorScheme * hi CurrentWord ctermfg=NONE ctermbg=53   cterm=NONE guifg=NONE    guibg=#40006a gui=NONE
 augroup END
 
 augroup TogglePasteMode

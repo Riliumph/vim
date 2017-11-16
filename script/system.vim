@@ -1,9 +1,9 @@
 " System Setting
-set shortmess+=I                  " skip init screen
+set shortmess+=I                  " Skip init screen
 set noswapfile
-set backspace=start,eol,indent    " use backspace to erase
+set backspace=start,eol,indent    " Use backspace to erase
 set virtualedit=block
-set scrolloff=3                   " scroll offset
+set scrolloff=3                   " Scroll offset
 
 " Clipboard Setting
 " Prohibit because register conflicts with Copy and Yank
@@ -35,35 +35,35 @@ if has('mouse')
 endif
 
 " Language Setting
-set encoding=utf-8    " when read a file
-scriptencoding utf-8  " when use muti-byte char in Vim Script
+set encoding=utf-8      " when read a file
+scriptencoding utf-8    " when use muti-byte char in Vim Script
 
 " File setting
-set fileencoding=utf-8  " use encoding to save file
-set fileencodings=utf-8,euc-jp,cp932 " use encoding to read file
-set fileformats=unix,dos,mac  " Auto discriminate CR-LF
+set fileencoding=utf-8  " Use encoding to save file
+set fileencodings=utf-8,euc-jp,cp932 " Use encoding to read file
+set fileformats=unix,dos,mac         " Auto discriminate CR-LF
 set ambiwidth=double    " Solve multi-byte characters collapse
 
 " Search Setting
-set hlsearch      " highlight match word
-set incsearch     " search on time
+set hlsearch            " Highlight match word
+set incsearch           " Search on time
 " set ignorecase
 set smartcase
-set wrapscan      " cyclic scan
+set wrapscan            " Do cyclic scan
 
 " Indent Setting
-set shiftwidth=4    " tab width at beginning of line
-set tabstop=4       " tab width except beginning of line
-set noexpandtab     " use tabcode instead of spaces
-set softtabstop=4   " expandtab's width
-set autoindent      " maintain indentation of previous line at line feed
-set smartindent     " calculate indent amount when use smartindent
-set shiftwidth=4    " calculation unit of smartindent
+set shiftwidth=4        " Tab width at beginning of line
+set tabstop=4           " Tab width except beginning of line
+set noexpandtab         " Use tabcode instead of spaces
+set softtabstop=4       " Expandtab's width
+set autoindent          " Maintain indentation of previous line at line feed
+set smartindent         " Calculate indent amount when use smartindent
+set shiftwidth=4        " Calculation unit of smartindent
 
 " Match Setting
-source $VIMRUNTIME/macros/matchit.vim  " expand [%]key command
+source $VIMRUNTIME/macros/matchit.vim  " Expand [%]key command
 
 " Completion Setting
-set wildmenu      " use completion on COMMAND MODE
-set history=1000  " store history amount
-set wildmode=list:longest  " use filename completion
+set wildmenu            " Use completion on COMMAND MODE
+set history=1000        " Store history amount
+set wildmode=full:longest  " Use filename completion

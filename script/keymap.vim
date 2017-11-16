@@ -1,4 +1,4 @@
-""" Microsoft Windows Shortcut key
+""" Microsoft Visual Studio for Windows Shortcut key
 " must set [stty start / stop undef] in .bashrc
 source $VIM_ROOT/script/windows.vim
 
@@ -29,6 +29,10 @@ nnoremap vgf :vertical botright wincmd f<CR>
 nnoremap hgf :wincmd f<CR>
 
 """ etc
+" Yank to the end of line
 nnoremap <S-y> y$
+" Use [_] register for deletion
+nnoremap x "_x
+" Remap <C-a> / <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>

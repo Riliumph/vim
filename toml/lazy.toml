@@ -29,3 +29,9 @@ repo = 'majutsushi/tagbar'
 on_source = ['lightline.vim']
 hook_source = "source $VIM_ROOT/config/tagbar.vim"
 
+[[plugins]]
+# gf command customizer
+repo = 'kana/vim-gf-user'
+on_event = "VimEnter"
+hook_add = "source $VIM_ROOT/config/gf-user.vim"
+

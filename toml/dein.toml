@@ -22,8 +22,3 @@ repo = 'tpope/vim-fugitive'
 # Show indent guides
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = "source $VIM_ROOT/config/indent-guides.vim"
-
-[[plugins]]
-# gf command customizer
-repo = 'kana/vim-gf-user'
-hook_add = "source $VIM_ROOT/config/gf-user.vim"

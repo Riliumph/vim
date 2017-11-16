@@ -1,24 +1,13 @@
 [[plugins]]
 # Cool status line
 repo = 'itchyny/lightline.vim'
-# When add plug-in, load a configuration file
+depends = 'tagbar'
 hook_add = "source $VIM_ROOT/config/lightline.vim"
 
 [[plugins]]
 # Useful explore
 repo = 'scrooloose/nerdtree'
 hook_add = "source $VIM_ROOT/config/nerdtree.vim"
-
-[[plugins]]
-# Show class, function, etc...
-repo = 'majutsushi/tagbar'
-hook_add = "source $VIM_ROOT/config/tagbar.vim"
-
-[[plugins]]
-# Unified interface
-repo = 'Shougo/unite.vim'
-depends = ['Shougo/vimproc']
-hook_add = "source $VIM_ROOT/config/unite.vim"
 
 [[plugins]]
 # Show search status
@@ -33,8 +22,3 @@ repo = 'tpope/vim-fugitive'
 # Show indent guides
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = "source $VIM_ROOT/config/indent-guides.vim"
-
-[[plugins]]
-# gf command customizer
-repo = 'kana/vim-gf-user'
-hook_add = "source $VIM_ROOT/config/gf-user.vim"

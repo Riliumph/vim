@@ -30,16 +30,19 @@ endif
 let g:acp_enableAtStartup = 0
 " Enable neocomplete
 let g:neocomplete#enable_at_startup = 1
+" Auto complete delimiter
+let g:neocomplete#enable_auto_delimiter = 1
 
 """ Trigger system
 " Minimum keyword length requierd to start completion
 let g:neocomplete#auto_completion_start_length = 1
-" Enable smart case
+let g:neocomplete#manual_completion_start_length = 0
+" Enable smart / camel / snake case
 let g:neocomplete#enable_smart_case = 1
-" Enable camel case
 let g:neocomplete#enable_camel_case_completion = 1
-" Enable snake case
 let g:neocomplete#enable_underbar_completion = 1
+" Delay time[msec]
+let g:neocomplete#auto_compete_delay = 30
 
 """ View system
 " Automatically select the first candidate in completion list
@@ -53,7 +56,7 @@ let g:neocomplete#max_list = 10
 let g:neocomplete#data_directory = join([g:dein_dir,"cache","neocomplete"],"/")
 " Minimum keyword length required cache
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#max_keyword_width = 50
+let g:neocomplete#max_keyword_width = 30
 
 " Don't close preview window
 let g:neocomplete#enable_auto_close_preview = 0

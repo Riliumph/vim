@@ -2,19 +2,36 @@
 # Intellisense
 repo = 'Shougo/neocomplete.vim'
 if = 'has("lua")'
-# When enter INSERT MODE, Load this plug-in
-on_i = 1
-# Load this configuration file after loading this plug-in
+on_event = "InsertEnter"
 hook_source = "source $VIM_ROOT/config/neocomplete.vim"
 
 [[plugins]]
 # for Unite file_mru
 repo      = 'Shougo/neomru.vim'
-# When load unite.vim, load plug-in
 on_source = ['unite.vim']
 
 [[plugins]]
 # Asynchronous execution of commands
 repo  = 'Shougo/vimproc.vim'
 build = 'make' # auto build
+on_source = ['unite.vim']
+
+[[plugins]]
+# Unified interface
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+on_event = 'VimEnter'
+hook_source= "source $VIM_ROOT/config/unite.vim"
+
+[[plugins]]
+# Show class, function, etc...
+repo = 'majutsushi/tagbar'
+on_source = ['lightline.vim']
+hook_source = "source $VIM_ROOT/config/tagbar.vim"
+
+[[plugins]]
+# gf command customizer
+repo = 'kana/vim-gf-user'
+on_event = "VimEnter"
+hook_add = "source $VIM_ROOT/config/gf-user.vim"
 

@@ -64,9 +64,6 @@ inoremap <C-Y> <C-O><C-R>
 
 """ CTRL-Tab : Move tab
 noremap <C-t> <ESC>:tabnew<CR>
-" Cannot use <C-Tab> in terminal, as <Tab> = <C-tab>
-noremap nt gt
-noremap pt gT
 
 """ CTRL-] : Move between [ and ]
 nnoremap <C-]> %

@@ -38,3 +38,6 @@ nnoremap <S-y> y$
 " Remap <C-a> / <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
+" Cannot use <C-Tab> in terminal, as <Tab> = <C-tab>
+noremap nt gt
+noremap pt gT

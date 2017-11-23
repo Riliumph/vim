@@ -35,8 +35,6 @@ nnoremap hgf :wincmd f<CR>
 """ etc
 " Yank to the end of line
 nnoremap <S-y> y$
-" Use [_] register for deletion
-nnoremap x "_x
 " Remap <C-a> / <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>

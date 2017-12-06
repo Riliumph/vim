@@ -15,7 +15,6 @@ inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
 
 " Ctrl+Space ：Start completion like Visual Studio
 if !has('gui_running')
-  inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : neocomplete#start_manual_complete()
   augroup ctrl_space_in_neocomplete
     autocmd!
     " Don't use noremap because settings after <C-Space> will not be reflected
@@ -23,6 +22,7 @@ if !has('gui_running')
     autocmd VimEnter * map! <Nul> <C-Space>
   augroup END
 endif
+imap <expr><nul> pumvisible() ? "\<down>" : neocomplete#start_manual_complete()
 
 """"" Neo Complete setting
 """ Boot up system

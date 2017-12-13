@@ -7,10 +7,12 @@ behave mswin
 """ Backspace
 " Backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
-" Backspace in Visual mode deletes selection
+" Backspace in Visual mode deletes selection by [_] register
 vnoremap <BS> "_d
-" Backspace in Normal & Visual mode deletes a char before cursor
+" Backspace in Normal & Visual mode deletes a char before cursor by [_] register
 nnoremap <BS> "_X
+""" Delete
+nnoremap <Del> "_x
 
 """ CTRL-Z : Undo; not in cmdline though
 noremap <C-Z> u
@@ -53,8 +55,8 @@ nnoremap <silent> <ESC><f3> :set hlsearch!<CR>
 
 """ CTRL-H : Replace character
 " Use register [f] to avoid conflict with clipboard
-nnoremap <C-h> <ESC>:%s/
-vnoremap <C-h> "fy:%s;<C-R>f;
+nnoremap <C-h> <ESC>:%substitute/
+vnoremap <C-h> "fy:%substitute;<C-R>f;
 
 """ CTRL-Y : Redo (although not repeat); not in cmdline though
 noremap  <C-Y> <C-R>
@@ -62,9 +64,6 @@ inoremap <C-Y> <C-O><C-R>
 
 """ CTRL-Tab : Move tab
 noremap <C-t> <ESC>:tabnew<CR>
-" Cannot use <C-Tab> in terminal, as <Tab> = <C-tab>
-noremap nt gt
-noremap pt gT
 
 """ CTRL-] : Move between [ and ]
 nnoremap <C-]> %

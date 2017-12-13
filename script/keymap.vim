@@ -1,6 +1,10 @@
+" Use alt key
+set winaltkeys=no
+
 """ Microsoft Visual Studio for Windows Shortcut key
 " must set [stty start / stop undef] in .bashrc
 source $VIM_ROOT/script/windows.vim
+source $VIM_ROOT/script/Macintosh.vim
 
 """ CTRL-G: Grep
 nnoremap <C-g> <ESC>:vimgrep
@@ -29,10 +33,15 @@ nnoremap vgf :vertical botright wincmd f<CR>
 nnoremap hgf :wincmd f<CR>
 
 """ etc
+" Clear screen
+nnoremap <silent> <c-l> :<c-u>nohlsearch<CR><><c-l>
 " Yank to the end of line
 nnoremap <S-y> y$
-" Use [_] register for deletion
-nnoremap x "_x
 " Remap <C-a> / <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
+" Cannot use <C-Tab> in terminal, as <Tab> = <C-tab>
+noremap nt gt
+noremap pt gT
+" Useful ESC key
+inoremap jj <ESC>

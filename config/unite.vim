@@ -1,5 +1,8 @@
 """ New Key map
 
+""" ALT-X
+nnoremap <M-x> :<C-u>Unite command<CR>
+
 """ CTRL-B
 nnoremap <C-b> :<C-u>Unite buffer: -auto-preview -buffer-name=search-buffer<CR>
 

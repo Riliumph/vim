@@ -43,3 +43,5 @@ nnoremap - <C-x>
 " Cannot use <C-Tab> in terminal, as <Tab> = <C-tab>
 noremap nt gt
 noremap pt gT
+" Useful ESC key
+inoremap jj <ESC>

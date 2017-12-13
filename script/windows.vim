@@ -55,8 +55,8 @@ nnoremap <silent> <ESC><f3> :set hlsearch!<CR>
 
 """ CTRL-H : Replace character
 " Use register [f] to avoid conflict with clipboard
-nnoremap <C-h> <ESC>:%s/
-vnoremap <C-h> "fy:%s;<C-R>f;
+nnoremap <C-h> <ESC>:%substitute/
+vnoremap <C-h> "fy:%substitute;<C-R>f;
 
 """ CTRL-Y : Redo (although not repeat); not in cmdline though
 noremap  <C-Y> <C-R>

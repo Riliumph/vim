@@ -98,7 +98,7 @@ let s:gb.bright_red     = ['#cc6666', 167]     " 251-73-52
 let s:gb.bright_green   = ['#b5bd68', 142]     " 184-187-38
 let s:gb.bright_yellow  = ['#f0c674', 214]     " 250-189-47
 let s:gb.bright_blue    = ['#81a2be', 109]     " 131-165-152
-let s:gb.bright_purple  = ['#81a2be', 175]     " 211-134-155
+let s:gb.bright_purple  = ['#d787af', 175]     " 211-134-155
 let s:gb.bright_aqua    = ['#8abeb7', 108]     " 142-192-124
 let s:gb.bright_orange  = ['#de935f', 208]     " 254-128-25
 

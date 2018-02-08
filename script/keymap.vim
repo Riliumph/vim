@@ -34,7 +34,7 @@ nnoremap hgf :wincmd f<CR>
 
 """ etc
 " Clear screen
-nnoremap <silent> <c-l> :<c-u>nohlsearch<CR><><c-l>
+nnoremap <silent> <c-l> :<c-u>nohlsearch<CR><c-l>
 " Yank to the end of line
 nnoremap <S-y> y$
 " Remap <C-a> / <C-x>

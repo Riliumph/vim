@@ -4,7 +4,7 @@ autocmd VimEnter * NERDTree
 
 " Close automatically when NerdTree is last window
 function! s:AutoClose()
-  if window#IsLast()
+  if api#window#IsLast()
     if exists("b:NERDTree")
        if b:NERDTree.isTabTree()
         q

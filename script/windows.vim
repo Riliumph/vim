@@ -6,7 +6,8 @@ behave mswin
 
 """ Backspace
 " Backspace and cursor keys wrap to previous/next line
-set backspace=indent,eol,start whichwrap+=<,>,[,]
+set backspace=indent,eol,start   " Use backspace key to erase
+
 " Backspace in Visual mode deletes selection by [_] register
 vnoremap <BS> "_d
 " Backspace in Normal & Visual mode deletes a char before cursor by [_] register

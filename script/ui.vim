@@ -7,9 +7,9 @@ set laststatus=2    " Always show stausbar
 if has("gui") || has("gui_running")
   set guioptions-=T " Non-dispkay tool-bar
   set guioptions-=r " Hide the right scroll bar
-  set guioptions-=R " Hide the right scroll bar when multiple buffers are open
+  set guioptions-=R " Hide the right scroll bar when multiple buffers are opened
   set guioptions-=l " Hide the left scroll bar
-  set guioptions-=L " Hide the left scroll bar when multiple buffers are open
+  set guioptions-=L " Hide the left scroll bar when multiple buffers are opened
   set guioptions-=b " Hide the horizontal scroll bar
 endif
 

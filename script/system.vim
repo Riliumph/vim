@@ -1,7 +1,6 @@
 " System Setting
 set shortmess+=I                  " Skip init screen
 set noswapfile
-set backspace=start,eol,indent    " Use backspace to erase
 set virtualedit=block
 set scrolloff=3                   " Scroll offset
 

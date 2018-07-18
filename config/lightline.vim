@@ -14,8 +14,7 @@ let g:lightline = {
   \   'left': [['vim_mode', 'opt_mode'],
   \            ['filename', 'current_tag'],
   \            ['']],
-  \   'right':[['lineinfo'],
-  \            ['filetype','fileencoding','fileformat']]
+  \   'right':[['filetype','fileencoding','fileformat']]
   \ },
   \ 'inactive': {
   \   'left': [['filename']],
@@ -44,7 +43,7 @@ function! LightlineVimMode()
 endfunction
 
 function! LightlineOptMode()
-  if winwidth(0) < 35
+  if winwidth(0) < 60
     return ''
   endif
   return &paste && &modifiable ? 'PASTE' : ''
@@ -74,7 +73,7 @@ function! LightlineFilename()
   endif
   " Add MOD mark
   if LightlineModified() != ''
-    let l:format = join([l:format, LightlineModified()], '')
+    let l:format = join([l:format, LightlineModified()], ' ')
   endif
   return l:format
 endfunction
@@ -94,21 +93,21 @@ function! LightlineFugitive()
 endfunction
 
 function! CurrentTag()
-  if winwidth(0) < 60
+  if winwidth(0) < 40
     return ''
   endif
   return tagbar#currenttag('%s', '')
 endfunction
 
 function! LightlineFileformat()
-  return 70 < winwidth(0) ? &fileformat : ''
+  return 100 < winwidth(0) ? &fileformat : ''
 endfunction
 
 function! LightlineFiletype()
-  return 70 < winwidth(0) ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  return 100 < winwidth(0) ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
 function! LightlineFileencoding()
-  return 70 < winwidth(0) ? (&fenc !=# '' ? &fenc : &enc) : ''
+  return 100 < winwidth(0) ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 

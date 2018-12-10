@@ -14,7 +14,9 @@ let g:lightline = {
   \   'left': [['vim_mode', 'opt_mode'],
   \            ['filename', 'current_tag'],
   \            ['']],
-  \   'right':[['filetype','fileencoding','fileformat']]
+  \   'right':[['lineinfo'],
+  \            ['char_code'],
+  \            ['filetype','fileencoding','fileformat']]
   \ },
   \ 'inactive': {
   \   'left': [['filename', 'current_tag']],
@@ -29,7 +31,8 @@ let g:lightline = {
   \   'fileformat': 'LightlineFileformat',
   \   'filetype': 'LightlineFiletype',
   \   'fileencoding': 'LightlineFileencoding',
-  \   'current_tag' : 'CurrentTag'
+  \   'current_tag' : 'CurrentTag',
+  \   'char_code' : 'CurrentCharCode'
   \ },
   \ 'separator':    { 'left': "\u2b80", 'right': "\u2b82" },
   \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
@@ -127,3 +130,9 @@ function! LightlineFileencoding()
     return &enc
 endfunction
 
+function! CurrentCharCode()
+  if winwidth(0) < 70
+    return ''
+  endif
+  return api#string#GetCharCode()
+endfunction

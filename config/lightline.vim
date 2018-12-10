@@ -17,7 +17,7 @@ let g:lightline = {
   \   'right':[['filetype','fileencoding','fileformat']]
   \ },
   \ 'inactive': {
-  \   'left': [['filename']],
+  \   'left': [['filename', 'current_tag']],
   \   'right':[['']]
   \ },
   \ 'component_function': {

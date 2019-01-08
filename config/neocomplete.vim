@@ -8,6 +8,8 @@ inoremap <expr><down> pumvisible() ? "\<down>" : "\<C-O>gj"
 
 " TAB : Determines completion
 inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
+" RETURN : Force to new line
+inoremap <expr><RETURN> pumvisible() ? neocomplete#cancel_popup() . "\<RETURN>" : "\<RETURN>"
 
 """ Close popup and delete backword char.
 "inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"

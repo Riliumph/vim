@@ -4,6 +4,16 @@ let s:save_cpo = &cpoptions
 set cpo&vim
 execute 'set runtimepath+=' . $VIM_ROOT
 
+""" Judge Operating System
+let g:os = ""
+if has('win32')
+    let g:os = "Win"
+elseif has('mac')
+    let g:os = "Mac"
+else
+    let g:os = system("uname")
+endif
+
 """ Basic configuration
 source $VIM_ROOT/script/system.vim
 source $VIM_ROOT/script/ui.vim

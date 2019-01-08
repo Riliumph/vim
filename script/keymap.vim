@@ -12,10 +12,12 @@ inoremap <C-g> "gy:vimgrep
 vnoremap <C-g> "gy:vimgrep <C-R>g %
 
 """ Arrow key
-nnoremap j gj
-nnoremap k gk
-"noremap <down> gj
-"noremap <up> gk
+" Enable to use in the selection mode
+vnoremap <S-Up>   gk
+vnoremap <S-Down> gj
+vnoremap <S-Left>  h
+vnoremap <S-Right> l
+" Enable to use in the insert mode
 inoremap <down> <C-O>gj
 inoremap <up>   <C-O>gk
 

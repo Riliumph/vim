@@ -1,7 +1,11 @@
 " Powerline Font
 if has("gui_running") || has("gui")
   set guifont=Ricty\ for\ Powerline\ 12
-  set guifontwide=Ricty\ for\ Powerline\ 12
+  if g:os == "Mac"
+    set guifontwide=ヒラギノ角ゴ\ StdN\ W8:h14
+  else
+    set guifontwide=Ricty\ for\ Powerline\ 12
+  endif
 else
   set guifont=Ricty\ for\ Powerline:h18
   set guifontwide=Ricty\ for\ Powerline:h18

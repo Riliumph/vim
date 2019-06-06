@@ -11,6 +11,11 @@ repo      = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
+# Vim filer
+repo = 'Shougo/vimfiler.vim'
+hook_source = "source $VIM_ROOT/config/vimfiler.vim"
+
+[[plugins]]
 # Asynchronous execution of commands
 repo  = 'Shougo/vimproc.vim'
 build = 'make' # auto build

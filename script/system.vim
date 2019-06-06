@@ -3,6 +3,7 @@ set shortmess+=I                  " Skip init screen
 set noswapfile
 set virtualedit=block
 set scrolloff=3                   " Scroll offset
+set autochdir                     " Syncronize current file directory
 
 " Clipboard Setting
 " Prohibit because register conflicts with Copy and Yank

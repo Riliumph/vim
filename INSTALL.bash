@@ -19,7 +19,7 @@ abs_dirname() {
 
 # Make symbolic link at $HOME/.vim
 installed_path=$(abs_dirname "$0")
-ln --symbolic --no-dereference $installed_path $HOME/.vim
+ln -nfs $installed_path $HOME/.vim
 
 if [[ $? != 0 ]];then
   exit 1

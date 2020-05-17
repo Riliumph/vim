@@ -21,6 +21,16 @@ vnoremap <S-Right> l
 inoremap <down> <C-O>gj
 inoremap <up>   <C-O>gk
 
+""" Search
+" Go center after search
+nmap n   nzz
+nmap N   Nzz
+nmap *   *zz
+nmap #   #zz
+nmap g* g*zz
+nmap g# g#zz
+
+
 """ Screen
 nnoremap hs split
 nnoremap vs vsplt

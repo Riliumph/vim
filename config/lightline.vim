@@ -16,7 +16,7 @@ let g:lightline = {
   \ 'mode_map': {'c': 'NORMAL'},
   \ 'active': {
   \   'left': [['vim_mode', 'opt_mode'],
-  \            ['filename', 'current_tag'],
+  \            ['ro_only','filename', 'current_tag'],
   \            ['']],
   \   'right':[['lineinfo'],
   \            ['char_code'],
@@ -29,6 +29,7 @@ let g:lightline = {
   \ 'component_function': {
   \   'vim_mode': 'LightlineVimMode',
   \   'opt_mode': 'LightlineOptMode',
+  \   'ro_only':  'LightlineReadOnly',
   \   'modified': 'LightlineModified',
   \   'fugitive': 'LightlineFugitive',
   \   'filename': 'LightlineFilename',
@@ -46,7 +47,7 @@ function! LightlineVimMode()
   if winwidth(0) < 20
     return ''
   endif
-  return &modifiable ? lightline#mode() : '⭤'
+  return &modifiable ? lightline#mode() : ''
 endfunction
 
 function! LightlineOptMode()
@@ -59,7 +60,15 @@ endfunction
 let s:filetype_dict={
       \'nerdtree': 'NERD Tree',
       \'tagbar'  : 'Tagbar',
+      \'help'    : 'help.txt'
       \}
+
+function! LightlineReadOnly()
+  if winwidth(0) < 40
+    return ''
+  endif
+  return &readonly ? '[⭤]' : ''
+endfunction
 
 function! LightlineFilename()
   " Special Name
@@ -68,10 +77,6 @@ function! LightlineFilename()
   endif
 
   let l:format=''
-  " Add Read Only mark
-  if &readonly
-    let l:format=join([l:format, '⭤'], '')
-  endif
   " Add filename
   if expand('%:t') != ''
     let l:format = join([l:format, expand('%:t')], '')

@@ -26,5 +26,5 @@ if [[ $? != 0 ]];then
 fi
 
 # Add bash setting for vim to bashrc
-echo 'export VIM_ROOT=$HOME/.vim' >> $HOME/.bashrc
-echo 'source $VIM_ROOT/init.bash' >> $HOME/.bashrc
+echo 'export VIM_ROOT=$HOME/.vim' >> $FISH_ROOT/config.fish
+echo 'source $VIM_ROOT/init.fish' >> $FISH_ROOT/config.fish
